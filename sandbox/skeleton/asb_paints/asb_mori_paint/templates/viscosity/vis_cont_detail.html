@@ -1,0 +1,124 @@
+{% include 'base.html' %}
+
+{% block content %}
+
+  <div class="container mt-3">
+      <div class="card">
+          <div class="card-header" style="text-align: center;">
+              <h4>Contenedor</h4>
+              <h4># QR: 989TY21</h4>
+          </div>
+          <div class="card-body">
+              <div style="padding-left: 5%;">
+                  <dl>
+                      <dt># Orden de Trabajo</dt>
+                      <dd>
+                          98TY00M25
+                      </dd>
+                  </dl>
+                  <dl>
+                      <dt> Sustancia </dt>
+                      <div class="row g-2">
+                          <div class="col-2">
+                              <dd>
+                                  tiempo: 2:30
+                              </dd>
+                          </div>
+                          <div class="col-1">
+                              <dd>
+                                  11.6 Kg
+                              </dd>
+                          </div>
+                      </div>
+                  </dl>
+                  <dl>
+                      <dt>Viscosidad</dt>
+                      <dd>
+                          6.2 CP
+                      </dd>
+                  </dl>
+                  <dl>
+                      <dt>Viscosidad Real</dt>
+                      <dd style="width: 25%;">
+                          <input class="form-control" type="number">
+                      </dd>
+                  </dl>
+                  <button class="btn btn-primary" type="submit" style="float: right; width: 25%;" data-bs-toggle="modal" data-bs-target="#errorModal">Verificar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="calModal" tabindex="-1" aria-labelledby="calModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="calModalLabel" style="font-size: 30px;"> Calculando </h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+              Se están realizando los cálculos correspondientes. Favor de esperar un momento.
+            </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #D1E7DD;">
+        <div class="modal-header" style="background-color: #198754; color: whitesmoke;">
+          <h5 class="modal-title" id="successModalLabel" style="font-size: 30px;"> Cálculo Exitoso </h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+              Cálculos realizados correctamente. Favor de dar click a finalizar para terminar el proceso.
+            </strong>
+            <br>
+            <button class="btn btn-primary" type="submit" style="float: right;">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #CFF4FC;">
+        <div class="modal-header" style="background-color: #0B5ED7; color: whitesmoke;">
+          <h5 class="modal-title" id="infoModalLabel" style="font-size: 30px;"> Información </h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+              A continuación, se debe de medir la viscosidad de la mezcla de dicho contenedor.
+            </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color: #CC0000;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel" style="font-size: 30px;">Error</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+              Mensaje Error: Viscosidad no es la esperada. Favor de dar click al boton "Iniciar Mejora de la Mezcla" para entrar al proceso.
+            </strong>
+            <br>
+            <button class="btn btn-primary mt-3" type="submit" style="float: right;">Iniciar Mejora de la Mezcla</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% block script %}
+    <script src="{{ url_for('static', filename='js/viscosity_javascript/viscosity_process.js') }}"></script>
+  {% endblock script %}
+
+{% endblock content %}

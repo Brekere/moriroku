@@ -1,0 +1,177 @@
+{% include 'base.html' %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="card mt-4">
+            <div class="card-header">
+                <div style="text-align: center;">
+                    <h3>Lista de Sustancias</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-sm-4">
+                    <div class="input-group mb-3">
+                        <div >
+                            <div>
+                                <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn1" value="1">
+                                <b> Diluyente </b>
+                            </div>
+                            <br>
+                            <div>
+                                <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn1" value="1" >
+                                <b> Aditivos </b>
+                            </div>
+                            <br>
+                            <div>
+                                <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn1" value="1" >
+                                <b> Solventes </b>
+                            </div>
+                            <br>
+                            <div>
+                                <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn1" value="1" >
+                                <b> Aglutinantes </b>
+                            </div>
+                            <br>
+                            <div>
+                                <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn1" value="1" >
+                                <b data-bs-toggle="modal" data-bs-target="#exampleModal"> Pigmentos </b>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div style="float: right;">
+                    <a type="button" class="btn btn-success" href="#" data-bs-toggle="modal" data-bs-target="#sustModal">Terminar Llenado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sustImproveModal" tabindex="-1" aria-labelledby="sustImproveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="text-align: center;">
+                <h5 class="modal-title" id="sustImproveModalLabel" style="font-size: 25px;"> Vertir Sustancia </h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body" style="font-size: 30px; text-align: center;">
+                    <h3>
+                        Favor de vertir la sustancia <b> Aditivos. </b>
+                    </h3>
+                    <button class="btn btn-primary mt-2" type="submit" style="width: 100%;"> Comenzar </button>
+                    <!-- <h3 style="float: left; padding-left: 10%;"> <b> 126 g </b> </h3>
+                    <h3 style="float: right; padding-right: 10%;"> <b> 45 % </b> </h3> -->     
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #CFF4FC;">
+            <div class="modal-header" style="background-color: #0B5ED7; color: whitesmoke;">
+            <h5 class="modal-title" id="infoModalLabel" style="font-size: 30px;"> Información </h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <strong style="font-size: 30px;">
+                Llenado completo de la sustancia <b>"Diluyente"</b>. Dar click en siguiente para que empiezar el siguiente llenado.
+                </strong>
+                <br>
+                <button class="btn btn-primary mt-3" type="submit" style="float: right; width: 25%;"> Siguiente </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #CFF4FC;">
+                <div class="modal-header" style="background-color: #0B5ED7; color: whitesmoke; text-align: center;">
+                    <h5 class="modal-title" id="reportModalLabel" style="font-size: 30px; text-align: center;"> Reporte Final: Contenedor #1 </h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body" style="font-size: 25px;">
+                    <h3>Orden de Trabajo #897810</h3>
+                    <div class="row g-2" style="padding-left: 8%;">
+                        <dl>
+                            <dt>Diluyente</dt>
+                            <dd>
+                                <div class="row g-2">
+                                    <div class="col">
+                                        Peso: &nbsp 355 g
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Aditivos</dt>
+                            <dd>
+                                <div class="row g-2">
+                                    <div class="col">
+                                        Peso: &nbsp 288 g
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Solventes</dt>
+                            <dd>
+                                <div class="row g-2">
+                                    <div class="col">
+                                        Peso: &nbsp 210 g
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Aglutinantes</dt>
+                            <dd>
+                                <div class="row g-2">
+                                    <div class="col">
+                                        Peso: &nbsp 100 g
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Pigmentos</dt>
+                            <dd>
+                                <div class="row g-2">
+                                    <div class="col">
+                                        Peso: &nbsp 50 g
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <img src="img/qr.png" style="margin-left: auto; margin-right: auto; width: 55%;">
+                        <button class="btn btn-primary" type="submit">Imprimir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: red; color: whitesmoke;">
+                <div class="modal-header">              
+                <h5 class="modal-title" id="errorModalLabel" style="font-size: 30px;"> Error </h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <strong style="font-size: 30px;">
+                    Mensaje Error: Error al mezclado de <b>"Aditivos"</b> mezcla en desperdicio. Favor de dar click a "Retornar" para regresar al llenado de contenedor.
+                    </strong>
+                    <br>
+                    <button class="btn btn-primary mt-3" type="submit" style="float: right; width: 25%;"> Retornar </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block script %}
+        <script src="{{ url_for('static', filename='js/improved_javascript/improved_process') }}"></script>
+    {% endblock script %}
+{% endblock content %}

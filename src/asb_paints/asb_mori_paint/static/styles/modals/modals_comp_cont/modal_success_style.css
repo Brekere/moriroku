@@ -1,0 +1,16 @@
+.modal-header-success{
+    background-color: #157347;
+}
+
+h5 {
+    font-size: 50px;
+}
+
+.modal-body-success {
+    text-align: center;
+    background-color: #5fe2a5;
+}
+
+strong {
+    font-size: 65px;
+}

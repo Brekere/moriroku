@@ -1,0 +1,13 @@
+-- Create Function
+
+CREATE OR REPLACE FUNCTION histocial_mixcontainer() RETURNS TRIGGER AS $mixcontainer$
+	BEGIN
+		insert into historicalmixcontainer (h_viscosity, h_weight, h_humidity, h_temperature) values (old.viscosity, old.weight, old.humidity, old.temperature);
+		return NEW;
+	END;
+$mixcontainer$ LANGUAGE plpgsql;
+
+--Create trigger
+
+CREATE TRIGGER histocial_mixcontainer BEFORE UPDATE ON mixcontainer
+FOR EACH ROW EXECUTE PROCEDURE histocial_mixcontainer();

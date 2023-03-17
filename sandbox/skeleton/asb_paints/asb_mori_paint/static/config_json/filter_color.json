@@ -1,0 +1,36 @@
+{
+    "list":[
+        {
+            "id_color": 0,
+            "id_filter": 0 
+        },
+        {
+            "id_color": 1,
+            "id_filter": 1
+        },
+        {
+            "id_color": 2,
+            "id_filter": 2 
+        },
+        {
+            "id_color": 3,
+            "id_filter": 2 
+        },
+        {
+            "id_color": 4,
+            "id_filter": 3 
+        },
+        {
+            "id_color": 5,
+            "id_filter": 3 
+        },
+        {
+            "id_color": 6,
+            "id_filter": 2 
+        },
+        {
+            "id_color": 7,
+            "id_filter": 1 
+        }
+    ]
+}

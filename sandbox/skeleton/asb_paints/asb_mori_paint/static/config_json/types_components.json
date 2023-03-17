@@ -1,0 +1,21 @@
+{   "0":
+        {
+            "id" : 0,
+            "name" : "base"            
+        },
+    "1":
+        {
+            "id" : 1,
+            "name" : "Solvente"     
+        },
+    "2":
+        {
+            "id" : 2,
+            "name" : "Aditivo"
+        },
+    "3":
+        {
+            "id" : 3,
+            "name" : "Catalizador"
+        }
+}

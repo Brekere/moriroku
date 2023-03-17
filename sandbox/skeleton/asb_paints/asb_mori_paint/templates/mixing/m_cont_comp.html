@@ -1,0 +1,89 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mix_process/mix_styles.css') }}">
+{% endblock linkcss %}
+
+
+{% block content %}
+<button type="button" data-bs-toggle="modal" onclick="clickR()">ORA</button>
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <div style="text-align: center;">
+                    <h3 id="container-count">
+                    </h3>
+                    <h3># Código de Barra: IY58SQ10AS</h3>
+                    <h3 style="float: left;">Peso Total: <b id="weigth-total"> 0 g </b> </h3>
+                    <h3 id="percent" style="float: right;"> 0 %</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-sm-4">
+                    <div class="input-group mb-3">
+                        <div id="components-list">
+                            {% for x in range(list_|length) %}
+                                {% if list_[x]['id'] > 0 %}
+                                    <div style="width: 250%;">
+                                        <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn2" value="check-{{x}}" disabled>
+                                        <b> {{list_[x]['name_component']}} (Jarra)</b>
+                                        <span style="float: right; width: 50%;">
+                                            <b id="weight-{{x}}"></b>                        
+                                            <button style="float: right; display: inline;" type="button" class="btn btn-success" data-item-id="1" id="fill_start" value="{{list_[x]['name_component']}}" onclick='eclick(this)'>Iniciar Llenado</button>
+                                        </span>
+                                    </div>
+                                    <br>
+                                {% else %}
+                                    <div style="width: 250%;">
+                                        <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn2" value="check-{{x}}" disabled>
+                                        <b> {{list_[x]['name_component']}} (Contenedor)</b>
+                                        <span style="float: right; width: 50%;">
+                                            <b id="weight-{{x}}"></b>                        
+                                            <button style="float: right; display: inline;" type="button" class="btn btn-success" data-item-id="1" id="fill_start" value="{{list_[x]['name_component']}}" onclick="eclick(this)">Iniciar Llenado</button>
+                                        </span>
+                                    </div>
+                                    <br>                                 
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_info.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_graph_paint.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_process.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_warning.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_error.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_success.html' %}
+    
+    {% block script %}
+        <script src="{{ url_for('static', filename='qr/qrcode.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='global/js/serial_web_connection.js') }}"></script>
+        <script src="{{ url_for('static', filename='global/js/axios.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/graph.js') }}"></script>
+        <script type="text/javascript">
+
+            var radio_btn = document.querySelectorAll('input[type=checkbox]')
+
+            var btns = document.querySelectorAll('button#fill_start')
+            for (let index = 0; index < btns.length; index++) {            
+                if(index == 0){
+                    btns[index].style.display = 'inline'
+                } else{
+                    btns[index].style.display = 'none'
+                }
+            }
+            var total_percent = 0
+            var list_json = '{{list_|tojson}}'
+            list_json = JSON.parse(list_json)
+            for(let x = 0; x < list_json.length; x++){
+                total_percent += list_json[x]['percent'] / 100
+            }
+        </script>
+        <script src="{{ url_for('static', filename='js/mix_javascript/mix_component.js') }}"></script>
+    {% endblock script %}
+
+{% endblock content %}

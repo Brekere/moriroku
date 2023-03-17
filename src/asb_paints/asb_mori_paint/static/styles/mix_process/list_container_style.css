@@ -1,0 +1,49 @@
+#end-process {
+    display: none;
+    float: right;
+    height: 71px;
+    font-size: 43px;
+}
+
+#title-div {
+    text-align: center;
+}
+
+h3 {
+    font-size: 55px;
+}
+
+.mb-3 {
+    width:725px
+}
+
+#radioBtn1 {
+    height: 49px;
+    width: 49px;
+}
+
+b {
+    font-size: 40px;
+}
+
+span {
+    float: right;
+    width: 50%;
+}
+
+#fill_start {
+    float: right;
+    height: 61px;
+    font-size: 40px;
+}
+
+button#back{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 39px;
+    width: 75px;
+    float: left;
+    color: whitesmoke;
+    background-color: rgb(133, 83, 133);
+ }

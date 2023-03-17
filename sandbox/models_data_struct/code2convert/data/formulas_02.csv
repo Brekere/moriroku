@@ -1,0 +1,12 @@
+id,Formula,Porcentajes,Tipo,Nombres,Tolerancia
+TK-01-014,Mezcla Barniz,100.00%,Base,Clear Coat 460-SR,+-1%
+,,50.00%,Solvente,903-89,+-1%
+,,1.00%,Aditivo (Crater),100611,+-1%
+,,50.00%,Catalizador,405-96,+-1%
+TK-01-000,Piano,100.00%,Base,ALLEXIT HighGloss Monolyer 460 SR,+-1%
+,,20.00%,Solvente,901-B9,+-1%
+,,20.00%,Solvente,901-86,+-1%
+,,5.00%,Solvente,NPP,+-1%
+,,1.00%,Aditivo (Crater),100611,+-1%
+TK-01-000,Barniz,100.00%,Base,HighGloss Clearcoat 460-SR,+-1%
+,,50.00%,Solvente,903-89,+-1%

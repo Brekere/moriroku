@@ -1,0 +1,113 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mix_process/cont_comp_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/keyboard/keyboard_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/modals/modals_comp_cont/modal_success_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/modals/modals_comp_cont/modal_process_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/modals/modals_comp_cont/modal_info_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/keyboard/alphaN_keyboard.css') }}">
+{% endblock linkcss %}
+
+{% block content %}
+    <div class="back-action">
+        <button class="btn" id="back" onclick="backPage()"> <i class="fa-solid fa-arrow-left"></i> </button>
+    </div>
+
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <div id="header-title">
+                    <h3 id="container-count" style="font-size: 50px;"></h3>
+                    <h3 id="barcode"># Código de Barra: ------</h3>
+                    <b id="weight-title" style="float: left;">Peso Total: &nbsp;</b> <b id="weigth-total" style="float: left;"> 0 g </b>
+                    <h3 id="percent"> 0 %</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-sm-4">
+                    <div class="input-group mb-3">
+                        <div id="components-list">
+                            {% for x in range(list_|length) %}
+                                {% if list_[x]['id'] > 0 %}
+                                    <div id="content-component">
+                                        <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn2" value="check-{{x}}" disabled>
+                                        <b value="{{ list_[x]['name_component'] }}" id="component-list"> {{list_[x]['nickname']}} </b> <b id="jug_name">(Jarra)</b>
+                                        <span>
+                                            <b id="weight-{{x}}"></b>                        
+                                            <button type="button" class="btn btn-success" data-item-id="{{list_[x]['id_component']}}" id="fill_start" value="{{list_[x]['name_component']}}" onclick="eclick(this)">Iniciar Llenado</button>
+                                        </span>
+                                    </div>
+                                    <br>
+                                {% else %}
+                                    <div id="content-component">
+                                        <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn2" value="check-{{x}}" disabled>
+                                        <b value="{{ list_[x]['name_component'] }}"> {{list_[x]['nickname']}} </b> <b id="container_name">(Contenedor)</b>
+                                        <span>
+                                            <b id="weight-{{x}}"></b>                        
+                                            <button type="button" class="btn btn-success" data-item-id="{{list_[x]['id_component']}}" id="fill_start" value="{{list_[x]['name_component']}}" onclick="eclick(this)">Iniciar Llenado</button>
+                                        </span>
+                                    </div>
+                                    <br>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button class="btn btn-success" id="zpl" onclick="pruebaError()">Prueba</button> -->
+
+
+    <!-- <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#componentCheckModal">MODAL</button> -->
+
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_info.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_graph_paint.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_process.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_warning.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_error.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_component/_modals_mix_success.html' %}
+    
+    {% block script %}
+        <script type="text/javascript">
+            var components_by_formula = []
+            
+            var radio_btn = document.querySelectorAll('input[type=checkbox]')
+
+            var btns = document.querySelectorAll('button#fill_start')
+            for (let index = 0; index < btns.length; index++) {
+                if(index == 0){
+                    btns[index].style.display = 'inline'
+                } else{
+                    btns[index].style.display = 'none'
+                }
+            }
+            var total_percent = 0
+            var list_json = '{{list_|tojson}}'
+            list_json = JSON.parse(list_json)
+            for(let x = 0; x < list_json.length; x++){
+                components_by_formula.push({
+                    "type_compent_name": list_json[x]['name_type'],
+                    "comp_name": list_json[x]["name_component"],
+                    "weight": ""
+                })
+                total_percent += list_json[x]['percent'] / 100
+            }
+            localStorage.setItem('components_formula', JSON.stringify(components_by_formula))
+        </script>
+        <script src="{{url_for('static', filename='js/api_connection/api_validations.js')}}"></script>
+        <script src="{{ url_for('static', filename='global/js/serial_web_connection.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/plots/fill_levels.js') }}"></script>
+        <script type="text/javascript">
+            var list_component = '{{list_|tojson}}'
+        </script>
+        <script src="{{ url_for('static', filename='js/language/mixing/substance_language.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/mix_javascript/mix_component.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/keyboard_js/keyboard_main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/api_connection/apis.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/api_connection/api_validations.js') }}"></script>
+    {% endblock script %}
+
+{% endblock content %}

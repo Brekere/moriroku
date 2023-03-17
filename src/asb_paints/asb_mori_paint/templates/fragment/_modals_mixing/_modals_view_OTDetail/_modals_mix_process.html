@@ -1,0 +1,71 @@
+<div class="modal fade" id="calculationModal" tabindex="-1" aria-labelledby="calculationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="calculationModalLabel" style="font-size: 25px;">Cálculo Contenedores</h5>
+        </div>
+        <div class="modal-body" style="font-size: 30px;">
+            <strong style="text-align: center;">
+                Calculando el número de contenedores. Favor de esperar unos segundos.
+            </strong>
+            <br>
+            <div style="float: right;">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#qrcompModal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="qrcompModal" tabindex="-1" aria-labelledby="qrcompModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="qrcompModalLabel" style="font-size: 25px;">Escanear Contenedor de Sustancias #5</h5>
+        </div>
+        <div class="modal-body" style="font-size: 30px; text-align: center;" >
+            <strong>
+                Escanee el contenedero de sustancias número 5 a vertir.
+            </strong>
+            <br>
+            <hr>
+            <div style="float: right;">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#qrcompModal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="changeModal" tabindex="-1" aria-labelledby="changeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="changeModalLabel" style="font-size: 25px;">Credenciales Persona Encargada</h5>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+                Favor de escanear el código de barras del encargado para especificar la cantidad de piezas
+            </strong>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- data-bs-backdrop="static" data-bs-keyboard="false" -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="insertDataModal" tabindex="-1" aria-labelledby="insertDataModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="insertDataModalLabel"></h5>          
+        </div>
+        <div class="modal-body" id="modal-body">
+            <input class="form-control mb-3" id="information-wo" type="text" maxlength="10" disabled>
+            <input class="form-control mb-3" id="information-container" type="text" maxlength="10" disabled>
+            {% include 'fragment/_keyboards/_keyboard_container.html' %}
+            {% include 'fragment/_keyboards/_keyboard_wo.html' %}
+        </div>
+      </div>
+    </div>
+</div>
+

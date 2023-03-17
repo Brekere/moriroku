@@ -1,0 +1,62 @@
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="infoProcessModal" tabindex="-1" aria-labelledby="infoProcessModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" id="info">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoProcessModalLabel">Verificación de datos</h5>
+            </div>
+            <div class="modal-body" id="info">
+                <h5 id="message-worker-info">Verifique si los datos ingresados son correctos.</h5>
+                <hr>
+                <div class="container mt-3">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <dt id="client-info">Cliente</dt>
+                            <dd id="client_name_info">
+                            </dd>
+                        </div>
+                        <div class="col-6">
+                            <dt id="lot-info"># Lote</dt>
+                            <dd id="lotName_info">
+                            </dd>
+                        </div>
+                    </div>
+                    <div class="row g-2 mt-2">
+                        <div class="col-6">
+                            <dt id="wo_info_"># Orden de Trabajo</dt>
+                            <dd id="work_order_info">
+                            </dd>
+                        </div>
+                        <div class="col-6">
+                            <dt id="filter-l-info">Filtro</dt>
+                            <dd id="filter_info">
+                            </dd>
+                        </div>
+                    </div>
+                    <div class="row g-2 mt-2">
+                        <div class="col-6">
+                            <dt id="color-info">Formula (Color)</dt>
+                            <dd id="formula_info">
+                            </dd>
+                        </div>
+                        <div class="col-6">
+                            <dt id="model-l-info">Modelo</dt>
+                            <dd id="model_info">
+                            </dd>
+                        </div>
+                    </div>
+                    <div class="row g-2 mt-2">
+                        <div class="col-6">
+                            <dt id="pieces-info"># Piezas:</dt>
+                            <dd id="container_info">
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <button class="btn btn-success" id="start_process" onclick="startFill()">Iniciar</button>
+                    <button class="btn btn-danger" id="edit_process" value="0" onclick="editInfo()">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

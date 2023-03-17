@@ -1,0 +1,55 @@
+<!-- Button trigger modal -->
+
+
+<div class="jumbotron">
+  <h2> Moodal de prueba</h2>
+  <center> 
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Simulación de llenado
+    </button>
+  </center>
+  <hr class="my-2">
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nivel de Llenado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <canvas id="fillLeves" height="200"></canvas>
+            <script>
+                level = 5;
+                level_ok = level;
+                level_in_interval = 0;
+                level_outside_interval = 0;
+                weight_containe = 12000;
+                max_weight_container = weight_containe * 1.4;
+                gr_level_ok = weight_containe*level_ok/100;
+                gr_level_in_interval = 0;
+                gr_level_outside_interval = 0;
+                //draw_fill_levels(); // testing
+                draw_fill_levels_stacked_bar();
+                
+            </script>
+            <script type="text/javascript">
+                window.addEventListener("keydown", function(e) {
+                  //tested in IE/Chrome/Firefox
+                  update_level_from_signal(e);
+                  //draw_fill_levels(); // testing .. 
+                  draw_fill_levels_stacked_bar();
+                })
+            </script>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

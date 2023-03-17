@@ -1,0 +1,99 @@
+<div class="modal fade" id="calculationModal" tabindex="-1" aria-labelledby="calculationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="calculationModalLabel" style="font-size: 25px;">Cálculo Contenedores</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="font-size: 30px;">
+            <strong style="text-align: center;">
+                Calculando el número de contenedores. Favor de esperar unos segundos.
+            </strong>
+            <br>
+            <div style="float: right;">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#qrcompModal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="qrcompModal" tabindex="-1" aria-labelledby="qrcompModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="qrcompModalLabel" style="font-size: 25px;">Escanear Contenedor de Sustancias #5</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="font-size: 30px; text-align: center;" >
+            <strong>
+                Escanee el contenedero de sustancias número 5 a vertir.
+            </strong>
+            <br>
+            <hr>
+            <div style="float: right;">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#qrcompModal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ASBajío</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong>
+                Please to complete the procedure scan the barcode of eachone of the containers
+            </strong>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="changeModal" tabindex="-1" aria-labelledby="changeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="changeModalLabel" style="font-size: 25px;">Credenciales Persona Encargada</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+                Favor de escanear el código de barras del encargado para especificar la cantidad de piezas
+            </strong>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="temperatureModal" tabindex="-1" aria-labelledby="temperatureModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="temperatureModalLabel" style="font-size: 25px;">Agregue la humedad y temperatura</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center;">
+            <strong style="font-size: 30px;">
+                Para continuar el procedimiento, añada la temperatura y la humedad de la sala de mezclas.
+            </strong>
+            <form class="row g-2 needs-validation" style="padding-top: 3%;">
+                <div class="col-6">
+                    <label style="font-weight: bolder; font-size: 30px;"> Temperatura </label>
+                    <input type="number" min="1" id="temperature_id" required>
+                </div>
+                <div class="col-5">
+                    <label style="font-weight: bolder; font-size: 30px;"> Humedad </label>
+                    <input type="number" min="1" id="temperature_id" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ok</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>

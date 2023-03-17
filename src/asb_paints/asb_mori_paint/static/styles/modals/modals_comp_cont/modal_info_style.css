@@ -1,0 +1,25 @@
+.modal-body-info {
+    background-color: #CFF4FC;
+}
+
+.modal-header-info {
+    background-color: #0B5ED7;
+    color: whitesmoke;
+    text-align: center;
+}
+
+button#print {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    height: 80px;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.modal-title-info{
+    font-size: 45px;
+    text-align: center;
+}

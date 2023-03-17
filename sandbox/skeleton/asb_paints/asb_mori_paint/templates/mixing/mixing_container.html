@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+
+{% block content %}
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <div style="text-align: center;">
+                    <h3>Lista de Contenedores</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-sm-4">
+                    <div class="input-group mb-3">
+                        <div id="content">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div style="float: right;">
+                    <a type="button" class="btn btn-success" href="http://127.0.0.1:5000/mixing/containers/component">Llenar Siguiente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'fragment/_modals_mixing/_modals_view_container/_modals_mix_info.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_container/_modals_mix_warning.html' %}
+
+    {% block script %}
+        <script src="{{ url_for('static', filename='js/mix_javascript/mix_container.js') }}"></script>
+    {% endblock script %}
+
+{% endblock content %}

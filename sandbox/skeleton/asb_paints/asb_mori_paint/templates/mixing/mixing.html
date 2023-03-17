@@ -1,0 +1,104 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mix_process/mix_styles.css') }}">
+{% endblock linkcss %}
+
+{% block content %}
+    <table class="table table-dark table-striped table-bordered mt-3">
+        <thead style="text-align: center;">
+            <th scope="col"> Serial </th>
+            <th scope="col"> Cliente </th>
+            <th scope="col"> # Orden de Trabajo </th>
+            <th scope="col"> Modelo </th>
+        </thead>
+        <tbody style="text-align: center;">
+            <tr >
+                <td>1</td>
+                <td> ASBajio </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-01" onclick="example()"> 897810 </button>
+                </td>
+                <td>P.T98</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td> Rakuten </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-02">015825 </button>
+                </td>
+                <td>P.T82</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td> Gamesa </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-03"> 789235 </button>
+                </td>
+                <td>P.T19</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td> Electronic Wurt </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-04"> 936510 </button>
+                </td>
+                <td>P.T01</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td> AltoPro <td>
+                    <button class="btn btn-outline-warning" id="OT-05"> 110058 </button>
+                </td>
+                <td>P.T98</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td> Huawei </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-06"> 250532 </button>
+                </td>
+                <td>P.T22</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td> Microsoft </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-07"> 052456 </button>
+                </td>
+                <td>P.T11</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td> Chevrolet </td>
+                <td>
+                    <a>
+                        <button class="btn btn-outline-warning" id="OT-08"> 720015 </button>
+                    </a>
+                </td>
+                <td>P.T28</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td> Apple </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-09"> 893256 </button>
+                </td>
+                <td>P.T55</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td> Nissan </td>
+                <td>
+                    <button class="btn btn-outline-warning" id="OT-10"> 653218 </button>
+                </td>
+                <td>P.T71</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% block script %}
+        <script src="{{ url_for('static', filename='js/mix_javascript/mix_process.js') }}"></script>
+    {% endblock script %}
+
+{% endblock content %}

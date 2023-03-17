@@ -1,0 +1,6 @@
+{
+    "scale" : {
+        "port" : "COM7",
+        "description" : "Prolific USB-to-Serial Comm Port (COM4)"
+    }
+}

@@ -1,0 +1,466 @@
+{
+    "list":[
+       {
+          "pintado":102400001,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.415.001",
+          "description":" VISOR PINTADO FS TL PIANO BLACK",
+          "peso_base":23.331
+       },
+       {
+          "pintado":102400002,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.858.415.002",
+          "description":" VISOR PINTADO FS CL DARK BLUE",
+          "peso_base":23.331
+       },
+       {
+          "pintado":102400003,
+          "color":"Dark Marine",
+          "no_parte":"2GJ.858.415.002",
+          "description":" VISOR PINTADO FS CL DARK MARINE",
+          "peso_base":24.975
+       },
+       {
+          "pintado":102400004,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.858.415.002",
+          "description":" VISOR PINTADO FS CL CAPUCCINO BEIGE",
+          "peso_base":35.9964
+       },
+       {
+          "pintado":102400005,
+          "color":"Caribou Gray",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL CARIBOU GRAY",
+          "peso_base":31.550178
+       },
+       {
+          "pintado":102400006,
+          "color":"Deep Iron",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL DEEP IRON",
+          "peso_base":33.33
+       },
+       {
+          "pintado":102400007,
+          "color":"Energetic Orange",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL ENERGETIC ORANGE",
+          "peso_base":35.9964
+       },
+       {
+          "pintado":102400008,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL PIANO BLACK",
+          "peso_base":23.331
+       },
+       {
+          "pintado":102400009,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.858.415.003",
+          "description":" Visor FS HL & CL PINTADO DARK BLUE",
+          "peso_base":23.331
+       },
+       {
+          "pintado":102400011,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.416.001",
+          "description":" VISOR PINTADO BFS 6.5 TL PIANO BLACK",
+          "peso_base":58.0
+       },
+       {
+          "pintado":102400012,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.858.416.A.002",
+          "description":" VISOR PINTADO BFS CL 8.0 DARK BLUE",
+          "peso_base":36.21375
+       },
+       {
+          "pintado":102400013,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.858.416.B.003",
+          "description":" VISOR PINTADO BFS HL 8.0 DARK BLUE",
+          "peso_base":36.21375
+       },
+       {
+          "pintado":102400014,
+          "color":"Caribou Gray",
+          "no_parte":"2GJ.858.416.B.003",
+          "description":" VISOR PINTADO BFS CL 8.0  CARIBOU GRAY",
+          "peso_base":53.328
+       },
+       {
+          "pintado":102400015,
+          "color":"Dark Marine",
+          "no_parte":"2GJ.858.416.C.004",
+          "description":" VISOR PINTADO BFS CL 10.0 DARK MARINE",
+          "peso_base":37.4625
+       },
+       {
+          "pintado":102400016,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.858.416.C.004",
+          "description":" VISOR PINTADO BFS CL 10.0 CAPUCCINO BEIGE",
+          "peso_base":51.3282
+       },
+       {
+          "pintado":102400017,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.858.416.C.004",
+          "description":" VISOR PINTADO BFS CL 10.0 DARK BLUE",
+          "peso_base":36.21375
+       },
+       {
+          "pintado":102400018,
+          "color":"Deep Iron",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 DEEP IRON",
+          "peso_base":51.3282
+       },
+       {
+          "pintado":102400019,
+          "color":"Energetic Orange",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 ENERGETIC ORANGE",
+          "peso_base":59.994
+       },
+       {
+          "pintado":102400020,
+          "color":"Caribou Gray",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 CARIBOU GRAY",
+          "peso_base":53.328
+       },
+       {
+          "pintado":102400021,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 PIANO BLACK",
+          "peso_base":58.0
+       },
+       {
+          "pintado":102400022,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.867.061.7N5",
+          "description":" PUERTA TIB CL IZQ CON/SW DARK BLUE",
+          "peso_base":11.1
+       },
+       {
+          "pintado":102400023,
+          "color":"Caribou Gray",
+          "no_parte":"2GJ.867.061.8Z6",
+          "description":" PUERTA TIB HL IZQ CON/SW CARIBOU GRAY",
+          "peso_base":17.9982
+       },
+       {
+          "pintado":102400024,
+          "color":"Deep Iron",
+          "no_parte":"2GJ.867.061.3LB",
+          "description":" PUERTA TIB HL IZQ CON/SW DEEP IRON",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400025,
+          "color":"Caribou Gray",
+          "no_parte":"2GJ.867.062.8Z6",
+          "description":" PUERTA TIB HL DER CON/SW CARIBOU GRAY",
+          "peso_base":17.9982
+       },
+       {
+          "pintado":102400026,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.867.062.7N5",
+          "description":" PUERTA TIB HL DER CON/SW DARK BLUE",
+          "peso_base":11.1
+       },
+       {
+          "pintado":102400027,
+          "color":"Caribou Gray",
+          "no_parte":"2GJ.867.062.A.8Z6",
+          "description":" PUERTA TIB HL DER SIN/SW CARIBOU GRAY",
+          "peso_base":17.9982
+       },
+       {
+          "pintado":102400028,
+          "color":"Deep Iron",
+          "no_parte":"2GJ.867.062.A.3LB",
+          "description":" PUERTA TIB HL DER SIN/SW DEEP IRON",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400029,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.867.439.A.7N5",
+          "description":" PUERTA TIB CL IZQ CON/SW DARK BLUE",
+          "peso_base":11.1
+       },
+       {
+          "pintado":102400030,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.867.440.A.7N5",
+          "description":" PUERTA TIB CL DER CON/SW DARK BLUE",
+          "peso_base":11.1
+       },
+       {
+          "pintado":102400031,
+          "color":"Dark Blue",
+          "no_parte":"2GJ.867.440.C.7N5",
+          "description":" PUERTA TIB CL DER SIN/SW DARK BLUE",
+          "peso_base":11.1
+       },
+       {
+          "pintado":102400032,
+          "color":"Dark Marine",
+          "no_parte":"2GJ.867.439.A.7P7",
+          "description":" PUERTA TIB CL IZQ CON/SW DARK MARINE",
+          "peso_base":12.765
+       },
+       {
+          "pintado":102400033,
+          "color":"Dark Marine",
+          "no_parte":"2GJ.867.440.C.7P7",
+          "description":" PUERTA TIB CL DER SIN/SW DARK MARINE",
+          "peso_base":12.765
+       },
+       {
+          "pintado":102400034,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.867.439.A.9D9",
+          "description":" PUERTA TIB CL IZQ CON/SW CAPUCCINO BEIGE",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400035,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.867.440.C.9D9",
+          "description":" PUERTA TIB CL DER SIN/SW CAPUCCINO BEIGE",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400036,
+          "color":"Energetic Orange",
+          "no_parte":"2GJ.867.061.3LC",
+          "description":" PUERTA TIB HL IZQ CON/SW ENERGETIC ORANGE",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400037,
+          "color":"Energetic Orange",
+          "no_parte":"2GJ.867.062A.3LC",
+          "description":" PUERTA TIB HL DER CON/SW ENERGETIC ORANGE",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400038,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.867.061.9D9",
+          "description":" PUERTA TIB HL IZQ CON/SW CAPUCCINO BEIGE ",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400039,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.867.062A.9D9",
+          "description":" PUERTA TIB HL DER SIN/SW CAPUCCINO BEIGE",
+          "peso_base":19.998
+       },
+       {
+          "pintado":102400040,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.858.415.002",
+          "description":" VISOR PINTADO FS CL/HL CAPUCCINO BEIGE",
+          "peso_base":35.9964
+       },
+       {
+          "pintado":102400041,
+          "color":"Cappuccino Beige",
+          "no_parte":"2GJ.858.416.D.004",
+          "description":" VISOR PINTADO BFS HL 10.0 CAPUCCINO BEIGE",
+          "peso_base":51.3282
+       },
+       {
+          "pintado":102400042,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.416.C.001",
+          "description":" VISOR PINTADO BFS 6.5 TL PIANO BLACK",
+          "peso_base":58.0
+       },
+       {
+          "pintado":102400043,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.415.E",
+          "description":" VISOR PINTADO FS TL PIANO BLACK  10\"",
+          "peso_base":23.331
+       },
+       {
+          "pintado":102400044,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.415.003.J",
+          "description":" VISOR PINTADO FS F/G PIANO BLACK ",
+          "peso_base":23.331
+       },
+       {
+          "pintado":102400045,
+          "color":"Piano Black",
+          "no_parte":"2GJ.858.416.F.005",
+          "description":" VISOR PINTADO BFS HL 10.0  PIANO BLACK",
+          "peso_base":58.0
+       },
+       {
+          "pintado":102400049,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.415.002",
+          "description":" VISOR PINTADO FS CL CAPUCCINO BEIGE",
+          "peso_base":25.0
+       },
+       {
+          "pintado":102400050,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL CARIBOU GRAY",
+          "peso_base":19.25
+       },
+       {
+          "pintado":102400051,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL DEEP IRON",
+          "peso_base":21.83
+       },
+       {
+          "pintado":102400052,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.415.003",
+          "description":" VISOR PINTADO FS HL & CL ENERGETIC ORANGE",
+          "peso_base":29.75
+       },
+       {
+          "pintado":102400059,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.416.B.003",
+          "description":" VISOR PINTADO BFS CL 8.0  CARIBOU GRAY",
+          "peso_base":43.9956
+       },
+       {
+          "pintado":102400061,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.416.C.004",
+          "description":" VISOR PINTADO BFS CL 10.0 CAPUCCINO BEIGE",
+          "peso_base":43.9956
+       },
+       {
+          "pintado":102400063,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 DEEP IRON",
+          "peso_base":42.662400000000005
+       },
+       {
+          "pintado":102400064,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 ENERGETIC ORANGE",
+          "peso_base":44.16225
+       },
+       {
+          "pintado":102400065,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.416.D.005",
+          "description":" VISOR PINTADO BFS HL 10.0 CARIBOU GRAY",
+          "peso_base":43.9956
+       },
+       {
+          "pintado":102400068,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.061.8Z6",
+          "description":" PUERTA TIB HL IZQ CON/SW CARIBOU GRAY",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400069,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.061.3LB",
+          "description":" PUERTA TIB HL IZQ CON/SW DEEP IRON",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400070,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.062.8Z6",
+          "description":" PUERTA TIB HL DER CON/SW CARIBOU GRAY",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400072,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.062.A.8Z6",
+          "description":" PUERTA TIB HL DER SIN/SW CARIBOU GRAY",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400073,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.062.A.3LB",
+          "description":" PUERTA TIB HL DER SIN/SW DEEP IRON",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400079,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.439.A.9D9",
+          "description":" PUERTA TIB CL IZQ CON/SW CAPUCCINO BEIGE",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400080,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.440.C.9D9",
+          "description":" PUERTA TIB CL DER SIN/SW CAPUCCINO BEIGE",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400081,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.061.3LC",
+          "description":" PUERTA TIB HL IZQ CON/SW ENERGETIC ORANGE",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400082,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.062A.3LC",
+          "description":" PUERTA TIB HL DER CON/SW ENERGETIC ORANGE",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400083,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.061.9D9",
+          "description":" PUERTA TIB HL IZQ CON/SW CAPUCCINO BEIGE ",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400084,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.867.062A.9D9",
+          "description":" PUERTA TIB HL DER SIN/SW CAPUCCINO BEIGE",
+          "peso_base":9.25
+       },
+       {
+          "pintado":102400085,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.415.002",
+          "description":" VISOR PINTADO FS CL/HL CAPUCCINO BEIGE",
+          "peso_base":25.0
+       },
+       {
+          "pintado":102400086,
+          "color":"Clear Coat",
+          "no_parte":"2GJ.858.416.D.004",
+          "description":" VISOR PINTADO BFS HL 10.0 CAPUCCINO BEIGE",
+          "peso_base":43.9956
+       }
+    ]
+ }

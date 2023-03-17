@@ -1,0 +1,228 @@
+{
+    "list": [
+        {
+            "name": "Piano Black", 
+            "id": 0,
+            "color_code": "041",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 0, 
+                    "name": "460SR.90ZC.M.011", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 0, 
+                    "name": "901B9.0000.0.006", 
+                    "type": 1, 
+                    "percentage": 20.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "3",
+                    "id_component": 1, 
+                    "name": "90186.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 20.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "4",
+                    "id_component": 2, 
+                    "name": "90019.0000.0.004", 
+                    "type": 1, 
+                    "percentage": 5.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "5",
+                    "id_component": 0, 
+                    "name": "LN245.0009.6.000", 
+                    "type": 2, 
+                    "percentage": 1.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Caribou Gray", 
+            "id": 1, 
+            "color_code": "8Z6",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 1, 
+                    "name": "4613P.9MFS.1.556", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 1, 
+                    "name": "90186.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 35.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "3",
+                    "id_component": 3, 
+                    "name": "90389.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 15.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Dark Blue", 
+            "id": 2, 
+            "color_code": "7N5",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 2, 
+                    "name": "4611M.53LN.1.556", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 1, 
+                    "name": "90186.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 80.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Deep Iron", 
+            "id": 3, 
+            "color_code": "3LB",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 3, 
+                    "name": "4613P.99V7.1.556", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 3, 
+                    "name": "90389.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 50.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Dark Marine", 
+            "id": 4, 
+            "color_code": "7P7",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 4, 
+                    "name": "4611M.59CB.1.011", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 1, 
+                    "name": "90186.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 80.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Cappuccino Beige", 
+            "id": 5, 
+            "color_code": "9D9",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 5, 
+                    "name": "4613P.9MJM.7.556", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 3, 
+                    "name": "90389.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 50.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Energetic Orange", 
+            "id": 6, 
+            "color_code": "3LC",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 6, 
+                    "name": "4613P.2958.7.556", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 3, 
+                    "name": "90389.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 50.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }, 
+        {
+            "name": "Clear Coat", 
+            "id": 7, 
+            "color_code": "0L9",
+            "list_componets": [
+                {
+                    "id" : "1",
+                    "id_component": 7, 
+                    "name": "4601G.0000.9.011", 
+                    "type": 0, 
+                    "percentage": 100.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "2",
+                    "id_component": 3, 
+                    "name": "90389.0000.0.556", 
+                    "type": 1, 
+                    "percentage": 50.0, 
+                    "tolerance": 1.0
+                }, 
+                {
+                    "id" : "3",
+                    "id_component": 0, 
+                    "name": "LN245.0009.6.000", 
+                    "type": 2, 
+                    "percentage": 1.0, 
+                    "tolerance": 1.0
+                }
+            ]
+        }
+    ]
+}

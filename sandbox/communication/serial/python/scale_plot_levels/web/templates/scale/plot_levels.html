@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-2">Gráficar niveles</h1>
+  <p class="lead">Puerto: {{port_selected}}</p>
+
+  {% include 'modals/fill_levels.html' %}
+  <hr class="my-4">
+</div>
+
+
+{% endblock %}

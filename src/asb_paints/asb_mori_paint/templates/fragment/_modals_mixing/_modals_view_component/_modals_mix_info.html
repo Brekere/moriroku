@@ -1,0 +1,87 @@
+<div class="modal fade" id="infoSubstanceModal" tabindex="-1" aria-labelledby="infoSubstanceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content-info">
+            <div class="modal-header-info">
+                <h5 class="modal-title" id="infoSubstanceModalLabel" style="font-size: 30px;"> Información </h5>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <strong style="font-size: 30px;">
+                A continuación, favor de vertir las sustancias de las jarras anteriores.
+                </strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="removeContModal" tabindex="-1" aria-labelledby="removeContModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content-info">
+            <div class="modal-header-info">
+                <h5 class="modal-title" id="removeContModalLabel" style="font-size: 50px;"> Completado </h5>
+            </div>
+            <div class="modal-body-info" style="text-align: center;">
+                <strong style="font-size: 65px;">
+                    Puede retirar la jarra/contenedor de la sustancia.
+                </strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="removePaintModal" tabindex="-1" aria-labelledby="removePaintModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content-info">
+            <div class="modal-header-info">
+                <h5 class="modal-title" id="removePaintModalLabel" style="font-size: 50px;"> Completado </h5>
+            </div>
+            <div class="modal-body-info" style="text-align: center;">
+                <strong style="font-size: 65px;">
+                    Puede retirar la jarra/contenedor de la sustancia.
+                </strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-info">
+                <h5 class="modal-title-info" id="reportModalLabel"> Reporte Final: Contenedor #1  </h3> </h5>
+            </div>
+            <div class="modal-body-info" style="font-size: 25px;">
+                <h3 style="margin-left: 25px;">Operador: <b id="OPName">  </b> </h3>
+                <div class="row g-2 mt-3" style="margin-left: 25px;">
+                    <div class="col-5">
+                        <h3># Lote: <b id="lotname"></b></h3>
+                    </div>
+                    <div class="col-6">
+                        <h3>OT: <b id="WorkO"></b></h3>
+                    </div>
+                </div>
+                <div class="mt-3" style="margin-left: 25px;">
+                    <h3>Fecha: <b id="date">  </b></h3>
+                </div>
+                <div style="margin-left: 25px;">                    
+                    <div class="mb-2" style="text-align: center;">
+                        <b id="info_mix">Información de Mezcla</b>
+                    </div>
+                    <ul id="list-components">                        
+                        <h3><li>Código de color: <b id="colorcode"></b> -- Nombre: <b id="colorname"></b> </li></h3>
+                        <h3><li>Contenedor: <b id="containernumber"> </b> -- Peso: <b id="weight-container"> </b> </li></h3>
+                    </ul>                    
+                </div>
+                <div style="margin-left: 25px;">
+                    <div class="mb-2" style="text-align: center;">
+                        <b id="components">Componentes</b>
+                    </div>
+                    <ul id="list-substances">   
+                    </ul>                    
+                </div>
+                <div>
+                    <button class="btn btn-dark" id="print" type="submit" onclick="create_zpl_code()">Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

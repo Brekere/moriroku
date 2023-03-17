@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./conn_f.js"></script>
+    <title>Mostra niveles</title>
+</head>
+<body>
+    <h1> Sistema de visualización de pesado</h1>
+    <br>
+    <button id ="iniciar_pesado" type="button" onclick="iniciar_pesado()">Iniciar el pesado</button>
+    <br>
+    <div>
+        <h3>Pruebas</h3>
+        <button id ="pedir_peso" type="button" onclick="pedir_peso()">Pedir peso</button>
+        <button id ="calibrar_tara" type="button" onclick="calibrar_tara()">Calibrar Tara</button>
+    </div>
+    <br>
+    <br>
+    <button id ="desconectarse" type="button" onclick="finalizar_proceso()">Finalizar proceso</button>
+    <br>
+
+    <button id ="regresar" type="button" onclick="regresar()">Regresar a la página anterior</button>
+
+    <script>
+        if (!navigator.cookieEnabled){
+            console.log('Cookies Deshabilitadas!! ');
+        }else{
+            console.log('Cookies habilitadas!! ');
+        }
+
+        async function iniciar_pesado(){
+            port_json = localStorage.getItem("puerto");
+            port_ = JSON.parse(port_json)
+            console.log('Puerto: '+ port_);
+            //console.log('Puerto: ' +  port_.getInfo());
+            console.log(port_.usbVendorId);
+            console.log(port_.usbProdcutId);
+            conectarse_puerto(port_);
+            // calibrar tara ... 
+            setTimeout(() => {  
+                calibrar_tara(); 
+                 }, 2000);
+            if(readyScale){
+                console.log('Báscula lista: ' + readyScale);
+            }
+            // lanzar modal .. 
+        }
+
+        function regresar(){
+            // history.back();
+            window.location.replace("./index.html");
+        }
+
+        function finalizar_proceso(){
+            // Desconectarse ...
+            desconectarse();
+            // ir a la pantalla principal ..
+            window.location.replace("./index.html"); 
+        }
+
+        function pedir_peso(){
+            command_id = 0;
+            sendSerialLine("Q");
+            console.log('Id comando enviado: '+ command_id);
+        }
+
+        function calibrar_tara(){
+            command_id = 1;
+            sendSerialLine("T");
+            console.log('Id comando enviado: '+ command_id);
+            readyScale = true;
+        }
+    </script>
+    
+</body>
+</html>

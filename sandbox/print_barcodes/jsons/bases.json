@@ -1,0 +1,54 @@
+{
+    "type": 0, 
+    "name": "Base(color)", 
+    "list": [
+        {
+            "id": 0, 
+            "name": "Piano Black", 
+            "description": "",
+            "identifier": "460SR.90ZC.M.011"
+        }, 
+        {
+            "id": 1, 
+            "name": "Caribou Gray", 
+            "description": "",
+            "identifier": "4613P.9MFS.1.556"
+        }, 
+        {
+            "id": 2, 
+            "name": "Dark Blue", 
+            "description": "",
+            "identifier": "4611M.53LN.1.556"
+        }, 
+        {
+            "id": 3, 
+            "name": "Deep Iron", 
+            "description": "",
+            "identifier": "4613P.99V7.1.556"
+        }, 
+        {
+            "id": 4, 
+            "name": "Dark Marine", 
+            "description": "",
+            "identifier": "4611M.59CB.1.011"
+        }, 
+        {
+            "id": 5, 
+            "name": "Cappuccino Beige", 
+            "description": "",
+            "identifier": "4613P.9MJM.7.556"
+        }, 
+        {
+            "id": 6, 
+            "name": "Energetic Orange", 
+            "description": "",
+            "identifier": "4613P.2958.7.556"
+        }, 
+        {
+            "id": 7, 
+            "name": "Clear Coat", 
+            "description": "",
+            "identifier": "4601G.0000.9.011"
+        }
+    ]
+}

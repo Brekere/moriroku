@@ -1,0 +1,93 @@
+<!-- Button trigger modal -->
+
+  <center> 
+    <label for="Mixture_Weight">g: </label>
+  <input type="text" id="Mixture_Weight" name="Mixture_Weight" value="100.0"/>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Iniciar llenado
+    </button>
+  </center>
+
+  
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nivel de Llenado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <canvas id="fillLeves" height="200"></canvas>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function init_values(max_weight_mix_, weight_container_){
+      opcion = 1;
+      port_ = '{{port_selected}}';
+      loop_w = false;
+      time_interval_ms = 1000; // este tiempo puede dar problemas, camabiar a 1000 si es así ... y en el servidor comentar la línea ser.tiemput = None 
+      /// ....
+      max_weight_mix = max_weight_mix_;
+      percentage_interval_accept = 0.1; // 10 % 
+      weight_container = weight_container_;
+      max_weight_container = weight_container * 1.2;
+      max_weight_mix_accept = max_weight_mix * 1.2
+      gr_min_accept = max_weight_mix * (1.0-percentage_interval_accept)
+      gr_max_accept = max_weight_mix * (1.0+percentage_interval_accept)
+      // weights in grams ... 
+      gr_level = 0;
+      gr_level_low = gr_level;
+      gr_level_in_interval = 0;
+      gr_level_outside_interval = 0;
+      // percentages ... 
+      level = 100*gr_level/weight_container;
+      level_low = level;
+      level_in_interval = 0;
+      level_outside_interval = 0;
+      // console.log('Variables listas!!');
+    }
+    function update_levels_loop(){
+      get_weight(port_loop);
+      draw_fill_levels_stacked_bar();
+    }
+
+    document.querySelectorAll('.btn-primary').forEach(item => {
+      item.addEventListener('click', function() {
+        /// Inicializar Tara ....
+        var elem_w = document.getElementById('Mixture_Weight');
+        weight_ = parseFloat(elem_w.value);
+        init_values(weight_, 12000);
+        // .... 
+        init_tare(port_);
+        /// Inicializar actualización de peso
+        if(loop_w == false){
+          port_loop = port_;
+          loop_w = true;
+          console.log('Port loop: '+port_loop);
+          console.log("Ciclo inicado!!!");
+          refreshIntervalId_update_weight = setInterval(update_levels_loop, time_interval_ms);
+        }
+      })
+    });
+    document.querySelectorAll('.btn-secondary').forEach(item => {
+    item.addEventListener('click', function() {
+      if(loop_w){
+        clearInterval(refreshIntervalId_update_weight);
+        loop_w = false;
+        port_loop = "";
+        refreshIntervalId_update_weight = null;
+      }
+      console.log("Ciclo terminado!!!");
+    })
+  });
+  </script>

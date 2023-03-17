@@ -1,0 +1,78 @@
+{
+    "general_info":{
+        "code_text_size": "6",
+        "type": "barcode"
+    },
+    "barcodes":{
+        "0":
+        {
+            "id_barcode": "123423",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "1":
+        {
+            "id_barcode": "234112",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "2":
+        {
+            "id_barcode": "131307",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "3":
+        {
+            "id_barcode": "001204",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "4":
+        {
+            "id_barcode": "000001",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "5":
+        {
+            "id_barcode": "187932",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "6":
+        {
+            "id_barcode": "202207",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "7":
+        {
+            "id_barcode": "220713",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "8":
+        {
+            "id_barcode": "150722",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        },
+        "9":
+        {
+            "id_barcode": "130513",
+            "date_creation": "2022-07-13 00:00:00",
+            "conatiner_weight_kg":  18,
+            "container_type": "metalico"
+        }
+    }
+}

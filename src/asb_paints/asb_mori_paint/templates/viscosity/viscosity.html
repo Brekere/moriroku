@@ -1,0 +1,90 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/viscosity/viscosity_styles.css')}}">
+{% endblock linkcss %}
+
+{% block content %}
+    <div class="action">
+        <button class="btn" id="back" onclick="backPage()"> <i class="fa-solid fa-arrow-left"></i> </button>
+        <!-- <button class="btn" id="continue" onclick="continuePage()"> <i class="fa-solid fa-arrow-right"></i> </button> -->
+    </div>
+    <br>
+    <br>
+    <div class="table-container">
+        <div class="title-color mb-4">
+            <b id="color-label">Color: <b id="color-name">Piano Black</b> </b>
+        </div>
+        <table class="table table-dark table-striped table-bordered">            
+            <tr>
+                <th rowspan="2" id="option_label" style="font-size: 20px; padding-top: 27px;">Opciones</th>
+                <th rowspan="2" style="font-size: 20px; padding-top: 27px;">Base</th>
+                <th colspan="5" id="solvents_label" style="font-size: 20px" scope="colgroup">Sustancias</th>
+                <th rowspan="2" id="viscosity_label" style="font-size: 20px; padding-top: 27px;" scope="colgroup">Viscosidad</th>
+            </tr>
+            <tr>
+                {% for x in substance_matrix[0] %}
+                    <th scope="col" style="width: 15%; font-size: 20px">{{x}}</th>
+                {% endfor %}
+                <!-- <th scope="col" style="width: 15%; font-size: 20px">901B9.0000.0.006</th>
+                <th scope="col" style="width: 15%; font-size: 20px">{{substance_matrix[0][0]}}</th>
+                <th scope="col" style="width: 15%; font-size: 20px">90019.0000.0.004</th>
+                <th scope="col" style="width: 15%; font-size: 20px">LN245.0009.6.000</th> -->
+            </tr>
+            {% for x in range(substance_matrix|length) %}
+                {% if x != 0 %}
+                    {% for y in substance_matrix[x] %}
+                        <tr>
+                            <td>{{y}}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+            <!-- <tr>
+                <td>
+                    <div class="form-check">
+                        <input value="0" class="form-check-input" type="radio" name="flexRadioDefault" id="radiobtn1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            <label id="option"> Opción </label> <label> 1 </label>
+                        </label>
+                    </div>                      
+                </td>
+                <td> 22 g </td>
+                <td> 289 g </td>
+                <td> 700 g </td>
+                <td> 100 g </td>
+                <td> 50 g </td>
+                <td> 65 g </td>
+                <td> 7 s </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="radiobtn2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            <label id="option"> Opción </label> <label> 2 </label>
+                        </label>
+                    </div>                      
+                </td>
+                <td> 10 g </td>
+                <td> 89 g </td>
+                <td> 189 g </td>
+                <td> 500 g </td>
+                <td> 258 g </td>
+                <td> 30 g </td>
+                <td> 6.6 s </td>
+            </tr> -->
+        </table>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-success" type="submit" style="float: right;margin-right: 25px; font-size: 40px; width: 15%;">Iniciar</button>
+    </div>
+    {% block script %}
+        <script>
+            var jsonMatrix = '{{substance_matrix|tojson}}'
+            console.log(jsonMatrix)
+        </script>
+        
+        <script src="{{url_for('static', filename='js/viscosity_javascript/viscosity_table.js')}}"></script>
+    {% endblock script %}
+{% endblock content %}

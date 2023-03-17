@@ -1,0 +1,24 @@
+{
+    "list": [
+        {
+            "id": 0,
+            "name": "Filtro de 25 micras",
+            "size": 25
+        },
+        {
+            "id": 1,
+            "name": "Filtro de 50 micras",
+            "size": 50
+        },
+        {
+            "id": 2,
+            "name": "Filtro de 75 micras",
+            "size": 75
+        },
+        {
+            "id": 3,
+            "name": "Filtro de 100 micras",
+            "size": 100
+        }
+    ]
+}

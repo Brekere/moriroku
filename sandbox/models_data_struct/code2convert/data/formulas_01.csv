@@ -1,0 +1,24 @@
+id,Formula,Porcentajes,Tipo,Nombres,Tolerancia
+TK-01-012,Mezcla Barniz,100.00%,Base,Clear Coat 460-SR,+-1%
+,,50.00%,Solvente,903-89,+-1%
+,,1.00%,Aditivo (Crater),100611,+-1%
+,,1.00%,Catalizador,405-96,+-1%
+TK-01-011,Piano Black,100.00%,Base,Piano Black,+-1%
+,,20.00%,Solvente,901-B9,+-1%
+,,20.00%,Solvente,901-86,+-1%
+,,5.00%,Solvente,909-1N,+-1%
+,,1.00%,Aditivo (Anti Crater),100611,+-1%
+,,50.00%,Catalizador,405-96,+-1%
+TK-01-010,Energetic Orange,100.00%,Base,Energetic Orange,+-1%
+,,50.00%,Solvente,903-89,+-1%
+TK-01-009,Cappuccino Beige,100.00%,Base,Cappuccino Beige,+-1%
+,,50.00%,Solvente,903-89,+-1%
+TK-01-008,Dark Marine,100.00%,Base,Dark Marine,+-1%
+,,80.00%,Solvente,901-86,+-1%
+TK-01-007,Dark Blue,100.00%,Base,Dark Blue,+-1%
+,,80.00%,Solvente,901-86,+-1%
+TK-01-006,Deep Iron,100.00%,Base,Deep Iron,+-1%
+,,50.00%,Solvente,903-89,+-1%
+TK-01-005,Caribou Gray,100.00%,Base,Caribou Gray,+-1%
+,,35.00%,Solvente,901-86,+-1%
+,,15.00%,Solvente,903-89,+-1%

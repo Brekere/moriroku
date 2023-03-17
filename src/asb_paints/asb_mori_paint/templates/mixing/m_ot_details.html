@@ -1,0 +1,144 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/keyboard/keyboard_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mix_process/m_ot_detail_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/modals/modal_warning_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/modals/modal_info_style.css') }}">
+{% endblock linkcss %}
+
+{% block script_header %}
+{% endblock script_header %}
+
+{% block content %}
+    <div class="action">
+        <button class="btn" id="back" onclick="backPage()"> <i class="fa-solid fa-arrow-left"></i> </button>
+        <button class="btn" id="continue" onclick="continuePage()"> <i class="fa-solid fa-arrow-right"></i> </button>
+    </div>
+
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h4 id="title-ot-detail">Validación de Orden de Trabajo</h4>
+            </div>
+            <div class="card-body">
+                <div>
+                    <h5 id="subtitle-ot">Especificaciones de la Orden de Trabajo:</h5>
+                </div>
+                <br>
+                <div style="padding-left: 10%;">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <dt id="client-ot">
+                                <span id="client_name_label"> Cliente: </span> 
+                                <span id="client_name">Volkswagen</span>
+                            </dt>                            
+                        </div>
+                        <div class="col-6">
+                            <dt>
+                                <span id="lotname_label"> # Lote </span>
+                                <span style="font-weight: normal;">(*): 
+                                    <span id="lotName"></span>
+                                </span>
+                            </dt>
+                        </div>
+                    </div>
+                    <dl>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <dt id="ot-label-"># Orden de Trabajo</dt>
+                                    <dd>
+                                        <div class="row g-2">
+                                            <div class="col-7">
+                                                <div class="input-group mb-3">
+                                                    <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#insertDataModal" id="add-WorkOrder" value="0">Editar</button>
+                                                    <input id="input-area-0" type="text" class="form-control" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </dd>       
+                                </dd>
+                            </div>
+                            <div class="col-6">
+                                <dt>
+                                    <span id="filter_label"> Filtro: </span>
+                                    <span id="filter"></span>
+                                </dt>          
+                                </dd>
+                            </div>
+                        </div>
+                    </dl>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <dt id="formula-color">Formula (Color)</dt>
+                            <dd>                            
+                                <select class="form-select" onchange="filterSelect(this, val)" for="InputGroupSelect02" id="select-form-color">
+                                    <option selected value="-1" id="select-opt-ph">Seleccionar...</option>
+                                    {% for i in list_ %}
+                                    <option value="{{i['id_formula']}}"> {{i['name_formula']}} </option>
+                                    {% endfor %}
+                                </select>
+                                
+                            </dd>
+                        </div>
+                        <div class="col-6">
+                            <dt id="model-select">Seleccione el Modelo</dt>
+                            <dd>
+                                <select class="form-select" onchange="modelSelect(this)" for="InputGroupSelect01" id="select-form-models" disabled>
+                                    
+                                </select>
+                            </dd>
+                        </div>                        
+                    </div>
+                        <div class="row g-2">
+                            <div class="col-5">
+                                <dt id="num-pieces"># de Piezas</dt>
+                                <dd>
+                                    <div class="input-group mb-3">
+                                        <button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#insertDataModal" id="add-Pieces" value="1" type="button">Editar</button>
+                                        <input type="text" class="form-control" id="input-area-1" disabled>
+                                    </div>
+                                </dd>
+                            </div>
+                        </div>
+                        
+                    </dl>
+                </div>
+                <hr>
+                <div>
+                    <strong>
+                        <b id="date-label"> Fecha: </b> <strong id="datetime"></strong>
+                        <button class="btn btn-primary" id="checkInfo">Iniciar</button>
+                    </strong>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h3 style="color: grey;" id="leyend-ot">* El número de lote se asignara al final del proceso.</h3>
+
+    {% include 'fragment/_modals_mixing/_modals_view_OTDetail/_modals_mix_process.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_OTDetail/_modals_mix_info.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_OTDetail/_modals_mix_warning.html' %}
+    {% include 'fragment/_modals_mixing/_modals_view_OTDetail/_modals_mix_error.html' %}
+    
+    {% block script %}
+        <script type="text/javascript">                        
+            var color_model = '{{data_ModelColor|tojson}}'
+        </script>
+        <script type="text/javascript">            
+            var models_list = '{{data_Models|tojson}}'
+        </script>
+        <script src="{{ url_for('static', filename='js/mix_javascript/mix_process.js') }}"></script>
+        <script src="{{url_for('static', filename='js/language/mixing/ot_detail_language.js')}}"></script>
+        <script type="text/javascript">
+            var val = '{{list_|tojson}}'
+        </script>
+        <script src="{{ url_for('static', filename='js/keyboard_js/keyboard_main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/api_connection/apis.js') }}"></script>
+    {% endblock script %}
+
+
+{% endblock content %}

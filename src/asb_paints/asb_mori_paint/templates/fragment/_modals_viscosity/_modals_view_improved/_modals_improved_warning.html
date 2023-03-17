@@ -1,0 +1,86 @@
+<div class="modal fade" id="graphWarnModal" tabindex="-1" aria-labelledby="graphWarnModalLabel" aria-hidden="true" style="color: black;">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #d2b203;">
+          <h5 class="modal-title" id="graphWarnModalLabel" style="font-size: 50px;"></h5>
+        </div>
+        <div class="modal-body" style="text-align: center; background-color: #f7d618;">
+          <strong style="font-size: 65px;" id="errorBody">
+          </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="graphWarnPaintModal" tabindex="-1" aria-labelledby="graphWarnPaintModalLabel" aria-hidden="true" style="color: black;">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #d2b203;">
+          <h5 class="modal-title" id="graphWarnPaintModalLabel" style="font-size: 50px;"></h5>
+        </div>
+        <div class="modal-body" style="text-align: center; background-color: #f7d618;">
+          <strong style="font-size: 65px;" id="errorPaintBody">
+          </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="viscoInfoModal" tabindex="-1" aria-labelledby="viscoInfoModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content" style="background-color: #FD650F;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="viscoInfoModalLabel" style="font-size: 50px;">Verificación de datos: Viscosidad</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center; background-color: #eb8348ee;">
+          <h5 id="message-container" style="font-size: 65px;"> 
+            <b id="visco_warn_01" style="font-size: 65px;"> La Viscosidad ingresada es: </b> <b id="value-input-visco" style="font-size: 65px; color: black;"> </b>. <b id="body_warning_2" style="font-size: 65px;"> Si es correcta dar click en Aceptar, sino dar click Editar</b>
+          <div class="row-2">
+            <button id="btn_accept" class="btn btn-success" onclick="addViscoCategory()" style="width: 45%; height: 80px; font-size: 50px">Aceptar</button>
+            <button id="btn_edit" class="btn btn-danger" id="edit" value="0" style="width: 45%; height: 80px; font-size: 50px" data-bs-dismiss="modal">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="ensureHumModal" tabindex="-1" aria-labelledby="ensureHumModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content" style="background-color: #FD650F;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ensureHumModalLabel" style="font-size: 50px;">Verificación de datos: Humedad</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center; background-color: #eb8348ee;">
+          <h5 id="message-container" style="font-size: 65px;"> 
+            <b id="hum_warn_01"  style="font-size: 65px;"> La Humedad ingresada es: </b> <b id="value-input-hum" style="font-size: 65px; color: black;"> </b>. <b id="body_warning_2"  style="font-size: 65px;"> Si es correcta dar click en Aceptar, sino dar click en de dar click en Editar</b>
+          </h5>
+          <div class="row-2">
+            <button id="btn_accept" class="btn btn-success" onclick="addHumCategory()" style="width: 45%; height: 80px; font-size: 50px">Aceptar</button>
+            <button id="btn_edit" class="btn btn-danger" id="edit" value="0" style="width: 45%; height: 80px; font-size: 50px" data-bs-dismiss="modal">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="ensureInfoModal" tabindex="-1" aria-labelledby="ensureContainerModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content" style="background-color: #FD650F;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ensureContainerModalLabel" style="font-size: 50px;">Verificación de datos: Temperatura</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body" style="text-align: center; background-color: #eb8348ee;">
+          <h5 id="message-container" style="font-size: 65px;">
+            <b id="temp_warn_01"  style="font-size: 65px;"> La Temperatura ingresada es: </b><b id="value-input-temp" style="font-size: 65px; color: black;"> </b>. <b id="body_warning_2" style="font-size: 65px;"> Si es correcta dar click en Aceptar, sino dar click en Editar</b>
+          </h5>
+          <div class="row-2">
+            <button id="btn_accept" class="btn btn-success" onclick="addTempCategory()" style="width: 45%; height: 80px; font-size: 50px">Aceptar</button>
+            <button id="btn_edit" class="btn btn-danger" id="edit" value="0" style="width: 45%; height: 80px; font-size: 50px" data-bs-dismiss="modal">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,66 @@
+#header-title {
+    text-align: center;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+h3#percent {
+    float: right;
+}
+
+h3#weight-title {
+    float: left;
+}
+
+#radioBtn2 {
+    width: 45px;
+    height: 45px;
+}
+
+#graph-div {
+    height: 725px
+}
+
+#content-component {
+    width: 250%;
+}
+
+b {
+    font-size: 40px;
+}
+
+span {
+    float: right;
+    width: 50%;
+}
+
+#start_substance {
+    float: right;
+    display: inline;
+    height: 75px;
+    font-size: 50px;
+}
+
+button#back{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 39px;
+    width: 75px;
+    float: left;
+    color: whitesmoke;
+    background-color: purple;
+ }
+
+button#continue{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 39px;
+    width: 75px;
+    float: right;
+    color: whitesmoke;
+    background-color: purple;
+ }

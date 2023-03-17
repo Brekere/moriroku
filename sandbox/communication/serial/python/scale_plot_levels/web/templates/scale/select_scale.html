@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-2">Listado de puertos</h1>
+  <hr class="my-4">
+  <table class="blueTable">
+    <tr>
+      <th>Puerto</th>
+      <th>Descripción</th>
+      <th></th>
+    </tr>
+    {% for p in lPorts %}
+    <tr>
+      <td> {{ p["port"] }}</td>
+      <td> {{ p["desc"] }}</td> 
+      <td> <button class="button" onclick="window.location.href='{{ url_for('scale.show_levels', port_=p.port) }}';" value="{{ p['port'] }}"> Selecionar  </button> </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <hr class="my-4">
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="ensureWOModal" tabindex="-1" aria-labelledby="ensureWOModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" id="warning">
+            <div class="modal-header">
+            <h5 class="modal-title" id="ensureWOModalLabel">Verificación de datos: Orden de Trabajo</h5>
+            </div>
+            <div class="modal-body" id="warning">
+                <h5 id="message-worker"> El número de la orden de trabajo es: </h5> <b id="value-input-wo"> </b>. <h5 id="message-worker-02">Si desea editar el número de la Orden de Trabajo favor
+                    de dar click en: </h5><h5 style="color: black;">"<b style="color: black;" id="edit_text">Editar</b>"</h5>
+                <div class="row-2">
+                    <button class="btn btn-success" id="add-wo" onclick="addWorkOrder()">Agregar</button>
+                    <button class="btn btn-danger" id="edit-wo" value="0" data-bs-dismiss="modal">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="ensureContainerModal" tabindex="-1" aria-labelledby="ensureContainerModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" id="warning">
+            <div class="modal-header">
+            <h5 class="modal-title" id="ensureContainerModalLabel">Verificación de datos: # Piezas</h5>
+            </div>
+            <div class="modal-body" id="warning">
+                <h5 id="message-container"> A ingresado la cantidad de piezas de: </h5><b id="value-input-conatiner"> </b>. <h5 id="message-container-02"> Si desea editar el número de piezas favor
+                de dar click en </h5>  <h5 style="color: black;">"<b style="color: black;" id="edit_text_1">Editar</b>"</h5>
+                <div class="row-2">
+                    <button class="btn btn-success" id="add-pz" onclick="addContainer()">Agregar</button>
+                    <button class="btn btn-danger" id="edit-pz" value="0" data-bs-dismiss="modal">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="dbWarningModal" tabindex="-1" aria-labelledby="dbWarningModalLabel" aria-hidden="true" style="color: whitesmoke;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content" id="warning">
+            <div class="modal-header">
+            <h5 class="modal-title" id="dbWarningModalLabel">Advertencia</h5>
+            </div>
+            <div class="modal-body" id="warning">
+                <h5 id="message-container"> No se ha podido registrar la información en la base de datos. Favor de intentarlo de nuevo. </h5>
+                <div>
+                    <button class="btn btn-danger" >Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

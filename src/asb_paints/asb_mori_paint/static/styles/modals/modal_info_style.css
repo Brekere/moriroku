@@ -1,0 +1,62 @@
+.modal-content#info {
+    background-color: #0B5ED7;
+    font-size: 25px;
+    color: black;
+}
+
+#infoProcessModalLabel {
+    font-size: 35px; 
+    color: whitesmoke;
+}
+
+.modal-body#info {
+    text-align: center;
+    background-color: #CFF4FC;
+}
+
+#message-worker-info {
+    font-size: 35px;
+}
+
+hr {
+    color: red;
+    border-radius: 3px solid red;
+}
+
+dd {
+    font-size: 50px;
+}
+
+#add-wo {
+    width: 45%;
+    height: 71px;
+    font-size: 43px;
+}
+
+#edit-wo {
+    width: 45%;
+    height: 71px;
+    font-size: 43px;
+}
+
+#add-pz {
+    width: 45%;
+    height: 71px;
+    font-size: 43px;
+}
+
+#edit-pz {
+    width: 45%;
+    height: 71px;
+    font-size: 43px;
+}
+
+#start_process {
+    font-size: 40px;
+    width: 45%;
+}
+
+#edit_process {
+    font-size: 40px;
+    width: 45%;
+}

@@ -1,0 +1,70 @@
+.grid{
+    /* Dos botones estilos */
+    display: grid;
+    grid-template-rows: 300px 300px;    
+    grid-template-columns: 97%;
+    grid-auto-rows: auto;
+    gap: 25px;
+    padding-left: 2.5%;    
+    padding-top: 5%;
+    
+    /* display: grid;
+    grid-template-rows: 300px;
+    grid-template-columns: 105%;
+    grid-auto-rows: auto;
+    gap: 25px;
+    padding-left: 2.5%;
+    padding-top: 12%; */
+}
+
+.grid button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    color: white;
+    font-size: 100px;
+}
+
+button#maximize{
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 39px;
+    width: 75px;
+    float: right;
+    color: whitesmoke;
+    background-color: #7bd8da;
+}
+
+button#minimize{
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 39px;
+    width: 75px;
+    float: right;
+    color: whitesmoke;
+    background-color: rgb(197, 80, 80);
+}
+
+button#zpl{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 39px;
+    float: left;
+    color: whitesmoke;
+    background-color: rgb(230, 78, 78);
+}
+
+button#viscosity_pro {
+    background-color: rgb(230, 159, 78);
+}
+button#back{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 39px;
+    width: 75px;
+    float: left;
+    color: whitesmoke;
+    background-color: rgb(133, 83, 133);
+ }

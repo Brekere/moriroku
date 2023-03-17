@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-2">Sistema de Proceso de Pintado</h1>
+  <p class="lead">Ayudará al operador a realizar el pintado y a guardar los datos del proceso para una mayor trazabildad</p>
+  <hr class="my-4">
+
+  <ul>
+    <li><a href="{{url_for('show_data.show_process')}}">Mostrar Procesos</a></li>
+    <li><a href="{{url_for('show_data.show_containers')}}">Mostrar Contenedores</a></li>
+  </ul>
+</div>
+
+
+
+{% endblock %}

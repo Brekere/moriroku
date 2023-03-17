@@ -1,0 +1,75 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-2">Listado de puertos</h1>
+  <hr class="my-4">
+  <table class="blueTable">
+    <tr>
+      <th>Puerto</th>
+      <th>Descripción</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for p in lPorts %}
+    <tr>
+      <td> {{ p["port"] }}</td>
+      <td> {{ p["desc"] }}</td> 
+      <td> <button class="button"  value="{{ p['port'] }}"> Iniciar Tara  </button> </td>
+      <td> <button class="btn-info"  value="{{ p['port'] }}"> Obtener Peso  </button> </td>
+      <td> <button class="btn-primary"  value="{{ p['port'] }}"> Iniciar ciclo  </button> </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <hr class="my-4">
+  <h3>Información del peso: </h3>
+  <label for="Weight">Peso</label>
+  <input type="text" id="Weight" name="Weight" disabled/>
+  <label for="Type_w">Medida</label>
+  <input type="text" id="Type_w" name="Type_w" disabled/>
+</div>
+
+
+
+<script>
+  opcion = 0;
+  document.querySelectorAll('.button').forEach(item => {
+    item.addEventListener('click', function() {
+      var value_ = this.getAttribute("value");
+      console.log(value_);
+      init_tare(value_);
+    })
+  });
+
+  document.querySelectorAll('.btn-info').forEach(item => {
+    item.addEventListener('click', function() {
+      var value_ = this.getAttribute("value");
+      console.log(value_);
+      get_weight(value_);
+    })
+  });
+  loop_w = false;
+  var port_loop;
+  var refreshIntervalId_update_weight;
+  document.querySelectorAll('.btn-primary').forEach(item => {
+    item.addEventListener('click', function() {
+      if(loop_w){
+        clearInterval(refreshIntervalId_update_weight);
+        loop_w = false;
+        port_loop = "";
+        refreshIntervalId_update_weight = null;
+        this.innerHTML  = "Iniciar ciclo";
+      }else{
+        port_loop = this.getAttribute("value");
+        loop_w = true;
+        console.log('Port loop: '+port_loop);
+        refreshIntervalId_update_weight = setInterval(function(){get_weight(port_loop)}, 1000);
+        this.innerHTML  = "Terminar ciclo";
+      }
+    })
+  });
+</script>
+
+{% endblock %}

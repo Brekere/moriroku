@@ -1,0 +1,60 @@
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<head>
+	<script type="text/javascript" src="./js/BrowserPrint-3.0.216.min.js"></script>
+	<script src="./js/pinter.js"></script>
+	<script type="text/javascript">
+		window.onload = setup;
+		text_to_print = "";
+	</script>
+</head>
+
+<body>
+
+	<span style="padding-right:50px; font-size:200%">Zebra Browser Print Test Page</span><br />
+	<span style="font-size:75%">This page must be loaded from a web server to function properly.</span><br><br>
+	<hr>
+	Selected Device: <select id="selected_device" onchange=onDeviceSelected(this);></select>
+	<hr>
+	<!--  <input type="button" value="Change" onclick="changeDevice();">-->
+	<input type="button" value="Get Application Configuration" onclick="getConfig()">
+	<input type="button" value="Get Status"
+		onclick="writeToSelectedPrinter('~hs'); readFromSelectedPrinter()">
+	<input type="button" value="Get Local Devices"
+		onclick="BrowserPrint.getLocalDevices(getDeviceCallback, errorCallback);"><br />
+		<hr>
+		
+	<!--
+		<br />
+		<button onclick="promptFilename()">Open</button>
+		<span id="span1"></span>
+		<input type="button" value="Send File" onclick="sendFile2Print();">
+	-->
+	<hr>
+	<input type="button" value="Generated Code Containers Barcode" onclick="create_barcodes_containers();"> <br /><br />
+	<input type="button" value="Generated Code Workers Barcode" onclick="create_barcodes_workers();">
+	<input type="button" value="Generated Code Workers QR" onclick="create_qr_workers();"> <br /><br />
+	<input type="button" value="Generated Code Components QR" onclick="create_qr_components();"> <br /><br />
+	<input type="button" value="Print Generated Code" onclick="sendExampleToPrinter();">
+	<br /><br />
+	<select  id="arr"></select > <input type="button" value="Print Selected Code" onclick="pint_selected_label();"> 
+	<hr>
+	<h3>ZPL code: </h3>
+	<hr>
+	<p id="code_zpl"></p>
+
+</body>
+
+</html>
+
+
+<!--
+	
+	<input type="button" value="Read" onclick="readFromSelectedPrinter()">
+	
+	<input type="text" name="write_text" id="write_text"><input type="button" value="Write"
+		onclick="writeToSelectedPrinter(document.getElementById('write_text').value)"><br /><br />
+
+
+-->

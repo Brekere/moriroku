@@ -1,0 +1,127 @@
+{% include 'base.html' %}
+
+{% block script_header %}
+    <script src="{{ url_for('static', filename='js/zebra_printer/BrowserPrint-3.0.216.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/zebra_printer/BrowserPrint-Zebra-1.0.216.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/zebra_printer/format_connection.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/zebra_printer/') }}"></script>
+{% endblock script_header %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home/home_style.css') }}">
+{% endblock %}
+
+<script>
+    setup()
+    list_files = []
+</script>
+
+{% block content %}
+    <div class="back-action">
+        <button class="btn" id="back" onclick="backPage()"> <i class="fa-solid fa-arrow-left"></i> </button>
+    </div>
+
+    <div class="maximize-action">
+        <button class="btn" id="maximize"><i class="fa-solid fa-maximize"></i></button>
+        <button class="btn" id="minimize"><i class="fa-solid fa-minimize"></i></button>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+        <div style="text-align: center;"><h1> Recuperación de archivos ZPL </h1></div>
+        <h3> Para volver a impimirlos (últimas 24 hrs)</h2>
+        <hr>
+
+        {% if "error" in data_zpl  %}
+        <h2> No hay contenedores!! </h2>
+        {% else %}      
+        <h3> Lista de contenedores realizados por el trabajador con id {{ data_zpl['id_worker'] }} </h3>
+        {% for proc in data_zpl['info'] %}
+            <table class="blueTable ">
+                <thead>
+                    <tr>
+                        <th># Lote</th>
+                        <th>Formula</th>
+                        <th># piezas</th>
+                        <th># Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{proc['id_process']}}</td>
+                        <td>{{proc['formula']}}</td>
+                        <td>{{proc['number_of_pieces']}} </td>
+                        <td>{{proc['date']}} </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="bg-light p-5 rounded-lg m-3 text-black">
+                <h5>Contenedores y archivos ZPL (cantidad: {{proc['list_labels']|length}}): </h5>
+                {% for container_label in proc['list_labels'] %}
+                    {% if "error" in container_label %}
+                    {% else %}
+                    <table class="greyGridTable">
+                        <thead>
+                            <tr>
+                                <th># Registro</th>
+                                <th>Código de barra</th>
+                                <th># Contenedor</th>
+                                <th># Fecha</th>
+                                <th>Imprimir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{container_label['id_container']}}</td>
+                                <td>{{container_label['id_barcode']}}</td>
+                                <td>{{container_label['num_container']}} / {{proc['num_containers']}}</td>
+                                <td>{{container_label['date']}}</td>
+                                <td> <button class="btn btn-primary" style="width: 100%; font-size: 20px;" id="{{container_label['id_container']}}" onclick="printLabel(this.id)">Imprimir</button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <script>
+                        file_txt = ''
+                    </script>
+                    {% for line in container_label["file"] %}
+                    <script>
+                        file_txt += {{line|tojson}}
+                    </script>
+                    {% endfor%}
+                    <script>
+                        id_container =  {{container_label["id_container"]|tojson}}
+                        data_json = {
+                            "id_container": id_container,
+                            "file": file_txt
+                        }
+                        list_files.push( data_json )
+                    </script>
+                    <script>
+                        function printLabel(element){
+                            let zpl_file = list_files.find(x => x.id_container == element)
+                            writeToSelectedPrinter(zpl_file.file)
+                        }
+
+                        function backPage() {
+                            window.location.replace('/')
+                        }
+
+                    </script>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor%}
+        {% endif %}
+    </div>
+
+    {% include 'fragment/_modals_home/_modals_home_info.html' %}
+    {% include 'fragment/_modals_home/_modals_home_warning.html' %}
+    {% include 'fragment/_modals_home/_modals_home_error.html' %}
+
+    {% block script %}
+        <script src="{{url_for('static', filename='js/main_screen.js')}}"></script>
+    {% endblock script %}
+
+{% endblock content %}

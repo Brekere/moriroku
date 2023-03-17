@@ -1,0 +1,46 @@
+{
+    "type": 0, 
+    "name": "Base(color)", 
+    "list": [
+        {
+            "id": 0, 
+            "name": "Piano Black", 
+            "description": ""
+        }, 
+        {
+            "id": 1, 
+            "name": "Caribou Gray", 
+            "description": ""
+        }, 
+        {
+            "id": 2, 
+            "name": "Dark Blue", 
+            "description": ""
+        }, 
+        {
+            "id": 3, 
+            "name": "Deep Iron", 
+            "description": ""
+        }, 
+        {
+            "id": 4, 
+            "name": "Dark Marine", 
+            "description": ""
+        }, 
+        {
+            "id": 5, 
+            "name": "Cappuccino Beige", 
+            "description": ""
+        }, 
+        {
+            "id": 6, 
+            "name": "Energetic Orange", 
+            "description": ""
+        }, 
+        {
+            "id": 7, 
+            "name": "Clear Coat", 
+            "description": ""
+        }
+    ]
+}

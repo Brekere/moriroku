@@ -1,0 +1,42 @@
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-info">
+                <h5 class="modal-title-info" id="reportModalLabel"> Reporte Final</h3> </h5>
+            </div>
+            <div class="modal-body-info" style="font-size: 25px;">
+                <h3 style="margin-left: 25px;"> <b id="operator_label"> Operador: </b> <b id="OPName">  </b> </h3>
+                <div class="row g-2 mt-3" style="margin-left: 25px;">
+                    <div class="col-5">
+                        <h3> <b id="lot_label"> # Lote: </b> <b id="lotname"></b></h3>
+                    </div>
+                    <div class="col-6">
+                        <h3>  OT:  <b id="WorkO"></b></h3>
+                    </div>
+                </div>
+                <div class="mt-3" style="margin-left: 25px;">
+                    <h3> <b id="date_label"> Fecha: </b> <b id="date"> </b></h3>
+                </div>
+                <div style="margin-left: 25px;">                    
+                    <div class="mb-2" style="text-align: center;">
+                        <b id="info_mix">Información de Mezcla</b>
+                    </div>
+                    <ul id="list-components">                        
+                        <h3><li> <b id="colorcode_label"> Código de color: </b> <b id="colorcode"></b> -- <b id="colorname_label"> Nombre: </b> <b id="colorname"></b> </li></h3>
+                        <h3><li> <b id="container_label"> Contenedor: </b> <b id="containernumber"> </b> -- <b id="weight_label"> Peso: </b> <b id="weight-container"> </b> </li></h3>
+                    </ul>                    
+                </div>
+                <div style="margin-left: 25px;">
+                    <div class="mb-2" style="text-align: center;">
+                        <b id="components">Componentes</b>
+                    </div>
+                    <ul id="list-substances">   
+                    </ul>                    
+                </div>
+                <div>
+                    <button class="btn btn-dark" id="print" type="submit" onclick="create_zpl_code()">Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<header class="navbar navbar-expand-lg" style="background-color: rgb(108 108 108);">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: white;" id="title_sys">
+      <img src="{{ url_for('static', filename='img/moriroku.png') }}" class="d-inline-block align-text-center ml-5">
+      <span id="title">Sistema de Pesaje</span>
+    </a>
+    <ul style="list-style-type: none;">  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: whitesmoke;">
+          <img src="{{ url_for('static', filename='img/asb-logo_01.png') }}" class="d-inline-block align-text-center ml-5" style="width: 100px; padding-left: 15px; color: whitesmoke;">
+          <span id="lang_drop"> Lenguajes </span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <ul class="fa-ul">
+            <li >
+              <i class="fa-li fa-solid fa-book-atlas"></i>
+              <a style="color: black;" class="btn" id="spanish" onclick="languageSelect('esp')"> Español </a>
+            </li>
+            <li>
+              <i class="fa-li fa-solid fa-book-atlas"></i>
+              <a style="color: black;"  class="btn" id="english" onclick="languageSelect('eng')"> Ingles </a>
+            </li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<!-- Sistema de Control de Mezclado de Pinturas -->

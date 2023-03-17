@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-2">Sistema de Proceso de Pintado</h1>
+  <p class="lead">Ayudará al operador a realizar el pintado y a guardar los datos del proceso para una mayor trazabildad</p>
+  <hr class="my-4">
+  <a class="dropdown-item" href="{{ url_for('scale.select_scale') }}">Mostrar niveles </a>
+</div>
+
+
+
+{% endblock %}

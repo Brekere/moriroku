@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="./background.js"></script> -->
+  <script src="./conn_f.js"></script>
+
+  <title>Seleccionar Báscula</title>
+</head>
+<body>
+
+  <button id ="conectarse" type="button" onclick="conectarse()">Conectarse</button>
+  <button id ="desconectarse" type="button" onclick="desconectarse()">Desconectarse</button>
+  <br>
+  <br>
+  <button id ="pedir_peso" type="button" onclick="pedir_peso()">Pedir peso</button>
+  <button id ="calibrar_tara" type="button" onclick="calibrar_tara()">Calibrar Tara</button>
+
+  <script>
+    // listar puertos .... 
+    function ports_list(){
+      navigator.serial.getPorts().then((ports) => {
+        n_ports = ports.length;
+        console.log('Numero de puertos disponibles: ' + n_ports);
+        for( var i = 0; i < n_ports; i++ ){
+          info_port = ports[i].getInfo();
+          console.log(info_port.usbVendorId);
+          console.log(info_port.usbProdcutId);
+        }
+      });
+    }
+
+    function pedir_peso(){
+      command_id = 0;
+      sendSerialLine("Q");
+      console.log('Id comando enviado: '+ command_id);
+    }
+
+    function calibrar_tara(){
+      command_id = 1;
+      sendSerialLine("T");
+      console.log('Id comando enviado: '+ command_id);
+    }
+    // .... 
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!-- Modales acerca del llenado de las jarras -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="improvedCheckModal" tabindex="-1" aria-labelledby="improvedCheckModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-improved">
+                <h5 class="modal-title-improved" id="improvedCheckModalLabel"> Escaneo Componente </h5>                
+            </div>
+            <div class="modal-body-improved">
+                <h3> 
+                    <b id="body_scan_01" style="font-weight: inherit;">Favor de escanear el QR del componente: </b> <b id="substance"> </b> <b id="body_scan_02" style="font-weight: inherit;"> para continuar el proceso. </b>
+                </h3>
+            </div>
+            <div style="background-color: rgb(201, 201, 201)">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" id="btn-close">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="improvedcontainerModal" tabindex="-1" aria-labelledby="improvedcontainerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="improvedcontainerModalLabel"> Inicio de Llenado </h5>                
+            </div>
+            <div class="modal-body-process">
+                <h3 id="improved_start_container" style="font-size: 65px;">
+                    Favor de colocar el contenedor en la báscula.
+                </h3>
+                <button class="btn btn-primary" type="submit" style="width: 100%; height: 80px; font-size: 50px;" id="ready_btn" onclick="readyBtn()">Listo</button>
+            </div>
+            <div style="background-color: rgb(201, 201, 201)">                
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" id="btn-close">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="improvedcalinModal" tabindex="-1" aria-labelledby="improvedcalinModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="improvedcalinModalLabel"> Calibración de Báscula </h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body-process">
+                <h3 id="body_calibration" style="font-size: 65px; margin: 13px;">
+                    La báscula se esta calibrando. Favor de no retirar el contenedor.
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="improvedsustModal" tabindex="-1" aria-labelledby="improvedsustModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" style="height:750px !important;">
+        <div class="modal-content" style="height: 945px;">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="improvedsustModalLabel">  
+                    <b id="substance_v"> Vertir Sustancia: </b> <b id="substance-tare"> </b> 
+                </h5>
+            </div>
+            <div class="modal-body-process" id="graph-div">
+                <div>
+                    <h4 style=" font-size: 40px; font-weight: bolder; margin: 13px;">
+                        <b id="weight_exp_l"> Peso Esperado: </b> </h4> <b id="expected-weight"></b>
+                    </h4>
+                </div>
+                <div style="height: 725px">
+                    <canvas id="fillLeves-tare"></canvas>
+                </div>
+                <script>
+                    function init_values_improved(max_weight_mix_, weight_container_, tolerance){
+                        console.log(max_weight_mix_ + " " +tolerance )
+                        opcion = 1;
+                        port_ = 'COM4';
+                        loop_w = false;
+                        time_interval_ms = 1000; // este tiempo puede dar problemas, camabiar a 1000 si es así ... y en el servidor comentar la línea ser.tiemput = None 
+                        /// ....
+                        max_weight_mix = max_weight_mix_;
+                        percentage_interval_accept = tolerance; // 10 % 
+                        weight_container = weight_container_;
+                        max_weight_container = weight_container * 1.2;
+                        max_weight_mix_accept = max_weight_mix * 1.2
+                        gr_min_accept = max_weight_mix * (1.0-percentage_interval_accept)
+                        gr_max_accept = max_weight_mix * (1.0+percentage_interval_accept)
+                        // weights in grams ... 
+                        gr_level = 0;
+                        gr_level_low = gr_level;
+                        gr_level_in_interval = 0;
+                        gr_level_outside_interval = 0;
+                        // percentages ... 
+                        level = 100*gr_level/weight_container;
+                        console.log(level)
+                        level_low = level;
+                        level_in_interval = 0;
+                        level_outside_interval = 0;
+                        // console.log('Variables listas!!');
+                        document.getElementById('expected-weight').innerText = `${max_weight_mix} g`
+                    }
+                    
+                    function update_levels_loop_tare(){
+                        var ele = document.getElementById('fillLeves-tare')
+                        get_weight(port_loop);
+                        draw_fill_levels_stacked_bar(ele.id);
+                    }
+
+                    document.querySelectorAll('.btn-primary').forEach(item => {
+                        item.addEventListener('click', async function() {
+                        /// Inicializar Tara ....
+                        /* var elem_w = document.getElementById('Mixture_Weight');
+                        weight_ = parseFloat(elem_w.value); */
+                        //init_values(1600, 12000, .01);
+                        // .... 
+                        await init_tare(port_);
+                        var response = response_tare
+                        console.log("Estado falso del tare",response)
+                        /// Inicializar actualización de peso
+                        if (response == true){
+                            if(loop_w == false){
+                              port_loop = port_;
+                              loop_w = true;
+                              console.log('Port loop: '+port_loop);
+                              console.log("Ciclo inicado!!!");
+                              refreshIntervalId_update_weight = setInterval(update_levels_loop_tare, time_interval_ms);
+                              $('#errorTareModal').modal('hide')
+                            }
+                        } else {
+                            $('#errorTareModal').modal('show')
+                        }
+                      })
+                    });
+                </script>                
+            </div>
+            <button class="btn btn-primary" type="submit" id="readySubsatance" onclick="checkSustance(1)">Lista Sustancia</button>
+            <button class="btn btn-dark" type="submit" id="readyCombination" onclick="checkSustance(2)">Batir</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="timerImproveModal" tabindex="-1" aria-labelledby="timerImproveModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="timerImproveModalLabel">Temporizador de Batido</h5>
+            </div>
+            <div class="modal-body-improved">
+                <strong style="font-size: 135px;" id="timerImprove"></strong>
+                <br>
+            </div>
+            <button class="btn btn-success mt-3" id="btn-finish" onclick="addImproveTemperature()">Terminar</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="temperatureImproveModal" tabindex="-1" aria-labelledby="temperatureImproveModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="temperatureImproveModalLabel">Agregue la humedad y temperatura</h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body-process">
+                <strong style="font-size: 50px;" id="body_temperature_moda">
+                    Añade la temperatura, humedad de la sala y la viscosidad de la mezcla.
+                </strong>
+                <div class="row g-3 mt-3" style="width: 100%; margin: 4px;">
+                    <div class="col-4" id="temperature">
+                        <label id="temperature_label"> Temperatura </label>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="button-temperature" value="0" onclick="keyBoardInformationContainer(this)">Agregar</button>
+                            <input type="text" class="form-control"  id="temperature_id_0" disabled>
+                            <span class="input-group-text" id="basic-addon2">°C</span>
+                        </div>
+                    </div>
+                    <div class="col-4" id="humidity">
+                        <label id="humidity_label"> Humedad </label>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="button-humidity" value="1" onclick="keyBoardInformationContainer(this)">Agregar</button>
+                            <input type="text" class="form-control" placeholder="" id="humidity_id_1" disabled>
+                            <span class="input-group-text" id="basic-addon2">%</span>
+                        </div> 
+                    </div>
+                    <div class="col-4" id="viscosity">
+                        <label id="viscosity_label"> Viscosidad </label>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button" id="button-viscosity" value="2" onclick="keyBoardInformationContainer(this)">Agregar</button>
+                            <input type="text" class="form-control" placeholder="" id="viscosity_id_2" disabled>
+                            <span class="input-group-text" id="basic-addon2">s</span>
+                        </div>
+                    </div>
+                    {% include 'fragment/_keyboards/_keyboard_humidity.html' %}
+                    {% include 'fragment/_keyboards/_keyboard_temperature.html' %}
+                    {% include 'fragment/_keyboards/_keyboard_viscosity.html' %}
+                </div>
+                <button class="btn btn-success" id="btn-temperature" onclick="temperatureImproveAdd()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>px

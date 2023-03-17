@@ -1,0 +1,101 @@
+.modal-title-improved {
+    font-size: 50px;
+    margin: 13px;
+}
+
+.modal-header-improved {
+    background-color: rgb(201, 201, 201);
+}
+
+.modal-body-improved {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.modal-header-process {
+    background-color: rgb(201, 201, 201);
+}
+
+.modal-title-process {
+    font-size: 50px;
+    margin: 13px;
+}
+
+#btn-temperature {
+    width: 94%;
+    font-size: 42px;
+    margin: 8px;
+    margin-left: 34px;
+}
+
+#button-temperature{
+    height: 79px;
+    font-size: 34px;
+}
+
+.modal-body-process{
+    margin: 10px;
+}
+
+
+
+#button-humidity{
+    height: 79px;
+    font-size: 34px;
+}
+
+#button-viscosity{
+    height: 79px;
+    font-size: 34px;
+}
+
+#temperature_id_0 {
+    font-size: 43px;
+}
+
+#humidity_id_1 {
+    font-size: 43px;
+}
+
+#viscosity_id_2 {
+    font-size: 43px;
+}
+
+span#basic-addon2 {
+    width: 19%;
+    font-size: 41px;   
+}
+
+label {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#btn-finish {
+        display: none;
+        width: 98%;        
+        font-size: 50px;        
+        margin: 10px;
+}
+
+#btn-close{
+    font-size: 33px;
+    width: 15%;
+    float: right;
+    margin: 5px;
+}
+
+#readySubsatance {    
+    width: 75%;
+    font-size: 50px;
+    margin-left: 13.5%;
+    margin: auto;
+}
+
+#readyCombination {
+    display: none;
+    width: 75%;
+    font-size: 50px;
+    margin-left: 13.5%;
+    margin: auto;
+}

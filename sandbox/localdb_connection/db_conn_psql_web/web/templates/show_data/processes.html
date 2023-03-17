@@ -1,0 +1,191 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-2">Datos de los Procesos: </h1>
+  <hr class="my-4">
+
+  <table class ="blueTable">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nombre Operador</th>
+        <th>id Formula</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for proc in processes %}
+      <tr>
+        <td>{{proc.id}}</td>
+        <td>{{proc.name_worker}}</td>
+        <td>{{proc.id_formula}}</td>
+        <td>{{proc.t_start}}</td>
+        <td>{{proc.t_end}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  
+  <button class="btn-primary" onclick="get_all_records()"> Obtener Procesos</button>
+
+  <button class="btn-primary" onclick="get_records_by_id(2)"> Pedir registro 2</button>
+  <button class="btn-success" onclick="upload_record()"> Subir registro</button>
+
+  <script>
+    function get_all_records(){
+      //get_all_process();
+      //get_all_container();
+      //get_all_viscosity_improvement();
+      //get_all_process_container_component();
+      //get_all_component_tare();
+      get_all_component_viscosity_improvement();
+    }
+
+    function get_records_by_id(id){
+      //get_process_by_id(id);
+      //get_container_by_id(id);
+      //get_viscosity_improvement_by_id(id);
+      //get_process_container_component_by_id(id);
+      //get_component_tare_by_id(id);
+      get_component_viscosity_improvement_by_id(id);
+    }
+
+    function upload_record(){
+      //upload_record_process();
+      //upload_record_mix_container();
+      //upload_record_viscosity_improvement();
+      //upload_record_process_container_component();
+      //upload_record_component_tare();
+      upload_record_component_viscosity_improvement();
+    }
+    function upload_record_process(){
+      var dt_s = new Date();
+      var dt_e = new Date();
+      dt_e.setHours( dt_e.getHours() + 1 );
+      console.log(dt_e.toISOString())
+      data = {
+          id_worker: 3,
+          name_worker: "José", // el bakcend lo debe de obtener dado el id del trabajador .. 
+          id_formula: 1,
+          id_filter: 2,
+          num_containers: 3,
+          conatiner_base_weight: 8000,
+          t_start: dt_s.toISOString(),
+          t_end: dt_e.toISOString(),
+          expected_viscosity_min : 6,
+          expected_viscosity_max : 9
+      };
+      post_process(data);
+    }
+
+    function upload_record_mix_container(){
+      // time ... 
+      var dt_s = new Date();
+      var dt_e = new Date();
+      var dt_s_c = new Date();
+      var dt_e_c = new Date();
+      var dt_s_t = new Date();
+      var dt_e_t = new Date();
+      var dt_s_v = new Date();
+      var dt_e_v = new Date();
+      dt_e.setHours( dt_e.getHours() + 5 );
+      dt_s_t.setHours( dt_s_t.getHours() + 1 );
+      dt_e_t.setHours( dt_e_t.getHours() + 2 );
+      dt_s_c.setHours( dt_s_c.getHours() + 1 );
+      dt_e_c.setHours( dt_e_c.getHours() + 2 );
+      dt_s_v.setHours( dt_s_v.getHours() + 3 );
+      dt_e_v.setHours( dt_e_v.getHours() + 4 );
+      // data ...
+      data = {
+        id_barcode : 1313,
+        id_process : 1,
+        viscosity : 8,
+        weight: 12500,
+        humidity: 30.5,// = float(data["humidity"])
+        temperature: 37.8,// = float(data["temperature"])
+        t_start : dt_s,
+        t_end : dt_e,
+        t_start_tare: dt_s_t,
+        t_end_tare: dt_e_t, 
+        t_start_container : dt_s_c,
+        t_end_container : dt_e_c,
+        t_start_viscosity : dt_s_v,
+        t_end_viscosity : dt_s_v
+      };
+      // post function ... 
+      post_container(data);
+    }
+
+    function upload_record_viscosity_improvement(){
+      // time ...
+      var dt_s = new Date();
+      var dt_e = new Date(); 
+      dt_e.setHours( dt_e.getHours() + 5 );
+      // data ...
+      data = {
+        id_mix_container : 1,//int(data["id_mix_container"])
+        new_viscosity : 8.1,//float(data["new_viscosity"])
+        extra_weight : 200,//float(data["extra_weight"])
+        t_start : dt_s,//js_date_to_py_datetime(data["t_start"])
+        t_end : dt_e,//js_date_to_py_datetime(data["t_end"])
+      };
+      // post function ... 
+      post_viscosity_improvement(data);
+    }
+
+    function upload_record_process_container_component(){
+      // data ...
+      data = {
+        id_mix_container: 1,// = int(data["id_mix_container"])
+        id_type_component: 1,// = int(data["id_type_component"])
+        id_component: 0,// = int(data["id_component"])
+        weight: 8250// = float(data["weight"])
+      };
+      // post function ... 
+      post_process_container_component(data);
+    }
+
+    function upload_record_component_tare(){
+      // time ... 
+      var dt_s = new Date();
+      var dt_e = new Date();
+      dt_e.setHours( dt_e.getHours() + 1 );
+      // data ...
+      data = {
+        id_mix_container: 1, // = int(data["id_mix_container"])
+        id_type_compoennt: 0,
+        id_component: 1, // = int(data["id_component"])
+        weight: 253, // = float(data["weight"])
+        t_start: dt_s, // = js_date_to_py_datetime(data["t_start"])
+        t_end: dt_e, // = js_date_to_py_datetime(data["t_end"])
+      };
+      // post function ... 
+      post_component_tare(data);
+    }
+
+    function upload_record_component_viscosity_improvement(){
+      // time ... 
+      var dt_s = new Date();
+      var dt_e = new Date();
+      dt_e.setHours( dt_e.getHours() + 1 );
+      // data ...
+      data = {
+        id_viscosity_improvement: 1, // = int(data["id_viscosity_improvement"])
+        id_component: 1, // = int(data["id_component"])
+        extra_weight: 150, // = float(data["extra_weight"])
+        t_start: dt_s, // = js_date_to_py_datetime(data["t_start"]) 
+        t_end: dt_e, // = js_date_to_py_datetime(data["t_end"])
+      };
+      // post function ... 
+      post_component_viscosity_improvement(data);
+    }
+  </script>
+
+</div>
+
+
+
+{% endblock %}

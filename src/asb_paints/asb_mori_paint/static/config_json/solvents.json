@@ -1,0 +1,34 @@
+{
+    "type": 1, 
+    "name": "Solvente", 
+    "list": [
+        {
+            "id": 0, 
+            "name": "901B9.0000.0.006", 
+            "description": "",
+            "name_old": "901-B9",
+            "identifier": "901B9.0000.0.006"
+        }, 
+        {
+            "id": 1, 
+            "name": "90186.0000.0.556", 
+            "description": "",
+            "name_old": "901-86",
+            "identifier": "90186.0000.0.556"
+        }, 
+        {
+            "id": 2, 
+            "name": "90019.0000.0.004", 
+            "description": "",
+            "name_old": "909-1N",
+            "identifier": "90019.0000.0.004"
+        }, 
+        {
+            "id": 3, 
+            "name": "90389.0000.0.556", 
+            "description": "",
+            "name_old": "903-89",
+            "identifier": "90389.0000.0.556"
+        }
+    ]
+}

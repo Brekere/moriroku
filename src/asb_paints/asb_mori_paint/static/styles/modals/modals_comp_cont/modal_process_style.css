@@ -1,0 +1,107 @@
+.modal-title-process {
+    font-size: 50px;
+    margin: 13px;
+}
+
+.modal-body-process {
+    text-align: center;
+    background-color: whitesmoke;
+    margin: 10px;
+}
+
+.modal-body-process#graph-div {
+    text-align: center;
+    font-size: 30px;
+    height: 80%;
+}
+
+.modal-header-process {
+    background-color: rgb(201, 201, 201);
+}
+
+#btn-finish {
+    display: none;
+    width: 100%;
+    height: 80px;
+    font-size: 50px;
+}
+
+#btn-temperature {
+    width: 100%;
+    height: 80px;
+    font-size: 50px;
+}
+
+span#basic-addon2 {
+    width: 19%;
+    font-size: 41px;   
+}
+
+#button-temperature{
+    height: 79px;
+    font-size: 34px;
+}
+
+#button-humidity{
+    height: 79px;
+    font-size: 34px;
+}
+
+#button-viscosity{
+    height: 79px;
+    font-size: 34px;
+}
+
+#temperature_id_0 {
+    font-size: 43px;
+}
+
+#humidity_id_1 {
+    font-size: 43px;
+}
+
+#viscosity_id_2 {
+    font-size: 43px;
+}
+
+label {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#readyGraphBtn {
+    width: 75%;
+    font-size: 50px;
+}
+
+#initTareBtn {
+    width: 18%;
+    font-size: 50px;
+    background-color: lightslategray;
+    color: white;
+}
+
+#readyGraphBtn2 {
+    width: 75%;
+    font-size: 50px; 
+}
+
+#initTareGraph2 {
+    width: 18%;
+    font-size: 50px;
+    background-color: tomato;
+    color: white;
+}
+
+#readyGraphBtn3 {
+    width: 95%;
+    height: 80px;
+    font-size: 50px;
+}
+
+button#btn-close_1 {
+    margin: 13px;
+    width: 15%;
+    font-size: 34px;
+    float: right;
+}

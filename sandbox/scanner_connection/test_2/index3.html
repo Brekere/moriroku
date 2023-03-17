@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  -->
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/scanner2.js"></script>
+    <title>Conexión a escaner</title>
+</head>
+<body>
+    <h1> Conectando a escaner</h1>
+    <input type="text" id="input_x">
+    <br>
+    <p id="data_p">  </p>
+    <br>
+    <button class="button" id="enable">Deshabilitar lector</button>
+    <script>
+        /*
+        window.MyModule = (function(){
+            alert('Cargando el módulo');
+            function MyModule(){
+                function foo(){
+                    bar();
+                }
+                function bar(){
+                    ;
+                }
+                function desctructor(){
+                    ;
+                }
+            }
+            return MyModule;
+        })();
+        */
+        let element = document.getElementById('enable');
+        element.onclick = function(){
+            if(use_scanner){
+                console.log('Entro!! Deshabilitar')
+                use_scanner = false;
+                element.innerText = "Habilitar lector";
+            }else{
+                console.log('Entro!! Habilitar')
+                use_scanner = true;
+                element.innerText = "Deshabilitar lector";
+            }
+        }
+        const p = document.getElementById('data_p');
+        $(BarcodesScanner).on('scan', function(e){
+            //alert(BarcodesScanner.barcodeData);
+            n_data++;
+            p.insertAdjacentHTML(
+                'beforeend',
+                '<br>'+n_data+') '+ data_,
+            );
+            data_ = "";
+            let element_in = document.getElementById('input_x');
+            element_in.value = "";
+        });
+    </script>
+</body>
+</html>

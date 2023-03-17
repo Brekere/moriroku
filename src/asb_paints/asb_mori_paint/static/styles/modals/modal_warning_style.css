@@ -1,0 +1,43 @@
+.modal-content#warning{
+    background-color: #FD650F;
+}
+
+#ensureWOModalLabel #ensureContainerModalLabel {
+    font-size: 55px;
+    color: whitesmoke;
+}
+
+.modal-body#warning {
+    text-align: center; 
+    background-color: #eb8348ee;
+}
+
+#message-worker {
+    font-size: 65px;
+}
+
+#message-container {
+    font-size: 65px;
+}
+
+#value-input-wo {
+    font-size: 55px;
+    color: black;
+}
+
+#value-input-conatiner {
+    font-size: 55px; 
+    color: black;
+}
+
+#edit {
+    width: 45%;
+    height: 60px;
+    font-size: 34px;
+}
+
+#add {
+    width: 45%;
+    height: 60px;
+    font-size: 34px;
+}

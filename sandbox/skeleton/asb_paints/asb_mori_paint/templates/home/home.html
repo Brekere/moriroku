@@ -1,0 +1,21 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home/home_style.css') }}">
+{% endblock %}
+
+{% block content %}
+  <div class="grid">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#infoModal" id="fill_pro">Preparación de Pintura</button>      
+  </div>
+
+  {% include 'fragment/_modals_home/_modals_home_process.html' %}
+  {% include 'fragment/_modals_home/_modals_home_info.html' %}
+  {% include 'fragment/_modals_home/_modals_home_warning.html' %}
+  {% include 'fragment/_modals_home/_modals_home_error.html' %}
+
+  {% block script %}
+    <script src="{{url_for('static', filename='js/main_screen.js')}}"></script>
+  {% endblock script %}
+
+{% endblock content %}

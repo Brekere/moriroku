@@ -1,0 +1,27 @@
+.grid{
+    display: grid;
+    grid-template-rows: 300px;
+    grid-template-columns: 100%;
+    grid-auto-rows: auto;
+    gap: 25px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 12%;
+}
+
+.grid button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    color: white;
+    font-size: 40px;
+}
+
+#fill_pro:focus{
+    border: 5px solid red;
+}
+
+#visc_pro:focus{
+    border: 5px solid red;
+}

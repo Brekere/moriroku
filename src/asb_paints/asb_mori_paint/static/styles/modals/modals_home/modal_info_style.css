@@ -1,0 +1,30 @@
+.modal-content#info {
+    background-color: #0B5ED7;
+    color: whitesmoke;
+}
+
+.modal-title {
+    font-size: 45px;
+}
+
+.modal-body#info {    
+    color: black;
+    background-color: #CFF4FC;
+    font-size: 55px;
+}
+
+.row.g-2#subs-visco {
+    text-align: center;
+}
+
+button#improvementS {
+    width: 47%;
+    font-size: 35px;
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+button#improvementClose {
+    width: 47%;
+    font-size: 35px;
+}

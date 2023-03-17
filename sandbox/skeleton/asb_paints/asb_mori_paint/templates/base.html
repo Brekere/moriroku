@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='icons/fontawesome-free-6.1.1-web/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+        
+        <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename='jquery/jquery.min.js') }}"></script>
+
+        
+        
+        <script src="{{ url_for('static', filename='global/js/Chart.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/plots/fill_levels.js') }}"></script>
+    {% block linkcss %}
+    
+    {% endblock linkcss %}
+</head>
+<body>
+    {% extends 'fragment/_nav.html' %}
+    
+    {% block content %}
+    
+    {% endblock %}
+    
+    {% block script %}
+        
+    {% endblock script %}
+
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+</body>
+</html>

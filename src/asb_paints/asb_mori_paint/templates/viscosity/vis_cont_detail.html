@@ -1,0 +1,67 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles/viscosity/improved_mix.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/keyboard/keyboard_style.css') }}">
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles/modals/modals_improved_sus/modal_improve_info.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles/modals/modals_improved_sus/modal_improve_process.css')}}">
+{% endblock %}
+
+{% block content %}
+  <div class="back-action">
+    <button class="btn" id="back" onclick="backPage()"> <i class="fa-solid fa-arrow-left"></i> </button>
+  </div>
+
+  <div class="container mt-3">
+    <div class="card">
+      <div class="card-header">
+        <div id="header-title">
+          <h3 id="color-name-improved" style="font-size: 50px;"></h3>
+          <h3> <b id="barcode"> # Código de Barra: </b> <b id="barcode_num"></b> </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="col-sm-4">
+          <div class="input-group mb-3">
+            <div id="components-list">
+              {% for x in list_improved %}              
+                <div id="content-component">
+                  <input class="form-check-input" type="checkbox" name="radioButton" id="radioBtn2" value="check-{{loop.index}}" disabled>                                    
+                  <b value="{{ x['component_identifier'] }}" id="component-list"> {{x['component_nickname']}} </b> 
+                  <span>
+                    <b id="weight-{{loop.index}}"></b>
+                    <button type="button" class="btn btn-success" id="start_substance" value="{{x['component_identifier']}}" onclick='startImproved(this)'>Iniciar Sustancia</button>
+                  </span>                         
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#timerImproveModal">Example</button>
+
+{% include 'fragment/_modals_viscosity/_modals_view_improved/_modals_improved_info.html' %}
+{% include 'fragment/_modals_viscosity/_modals_view_improved/_modals_improved_process.html' %}
+{% include 'fragment/_modals_viscosity/_modals_view_improved/_modals_improved_success.html' %}
+{% include 'fragment/_modals_viscosity/_modals_view_improved/_modals_improved_warning.html' %}
+{% include 'fragment/_modals_viscosity/_modals_view_improved/_modals_improved_error.html' %}
+
+{% block script %}
+  <script src="{{url_for('static', filename='js/api_connection/api_validations.js')}}"></script>        
+  <script src="{{ url_for('static', filename='global/js/serial_web_connection.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plots/fill_levels.js') }}"></script>
+  <script src="{{url_for('static', filename='js/language/viscosity/viscosity_language.js')}}"></script>
+  <script>
+    var list_improved_ = '{{list_improved|tojson}}'
+    console.log(list_improved_)
+  </script>
+  <script src="{{url_for('static', filename= "js/load_js/files_loads.js")}}"></script>
+  <script src="{{ url_for('static', filename='js/keyboard_js/keyboard_main.js') }}"></script>
+  <script src="{{url_for('static', filename= "js/viscosity_javascript/viscosity_improved.js")}}"></script>
+  <script src="{{ url_for('static', filename='js/api_connection/apis.js') }}"></script>
+{% endblock  %}

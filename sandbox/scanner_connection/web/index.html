@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  -->
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/scanner.js"></script>
+    <title>Conexión a escaner</title>
+</head>
+<body>
+    <h1> Conectando a escaner</h1>
+    <input type="text" id="input_x">
+    <br>
+    <p id="data_p">  </p>
+    <br>
+    <button class="button" id="enable">Deshabilitar lector</button>
+    <button class="button" id="init_comp_info">Iniciar espera de info de Componentes</button>
+    <button class="button" id="save_comp_info">Guardar Info Componente</button>
+    <script>
+        let element_init_comp_info = document.getElementById('init_comp_info');
+        element_init_comp_info.onclick = function(){
+            if(init_comp){
+                info_comp = {};
+                init_comp = false;
+                element_init_comp_info.innerText = "Iniciar espera de info de Componentes";
+            }else{
+                init_comp = true;
+                element_init_comp_info.innerText = "Detener espera de info de Componentes";
+            }
+        }
+        let element_save_comp_info = document.getElementById('save_comp_info');
+        element_save_comp_info.onclick = function(){
+            if(init_comp){
+                list_info_comp.push(info_comp);
+                n_data=0;
+                info_comp = {};
+            }
+        }
+        let element = document.getElementById('enable');
+        element.onclick = function(){
+            if(use_scanner){
+                console.log('Entro!! Deshabilitar')
+                use_scanner = false;
+                element.innerText = "Habilitar lector";
+            }else{
+                console.log('Entro!! Habilitar')
+                use_scanner = true;
+                element.innerText = "Deshabilitar lector";
+            }
+        }
+        const p = document.getElementById('data_p');
+        $(BarcodesScanner).on('scan', function(e){
+            n_data++;
+            if(init_comp){
+                info_comp[n_data] = data_;
+            }
+            p.insertAdjacentHTML(
+                'beforeend',
+                '<br>'+n_data+') '+ data_,
+            );
+            data_ = "";
+            let element_in = document.getElementById('input_x');
+            element_in.value = "";
+        });
+    </script>
+</body>
+</html>

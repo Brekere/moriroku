@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="./background.js"></script> -->
+  <script src="./conn_f.js"></script>
+
+  <title>Seleccionar Báscula</title>
+</head>
+<body>
+
+  <button id ="obtener_puerto" type="button" onclick="obtener_puerto()">Obtener puerto</button>
+  <br>
+  <div>
+    <button id ="ir_pagina_nivel" type="button" onclick="ir_pagina_nivel()">Ir a medidor de nivel</button>
+  </div>
+  <br>
+  
+  
+
+  <script>
+    const SerialPort = require('serialport');
+    SerialPort.list() // returns promise that resolves to list of ports
+    // filters for a specific port
+    .then(ports => ports.filter(port => port.pnpId == "USB\\VID_0451&PID_BEF3&MI_00\\6&808E38E&0&0000"))
+    // logs info
+    .then(ports => {console.log('inner',port[0].comName, 'outer', port[0]); return ports})
+    
+    function ir_pagina_nivel(){
+      port_ = get_port();
+      window.port = port_
+      console.log('Puerto: ' +  port_);
+      localStorage.setItem("puerto", JSON.stringify(port_));
+      console.log('Puerto info: ' +  port_.getInfo());
+      window.location.replace("./show_level.html");
+    } 
+  </script>
+  
+</body>
+</html>

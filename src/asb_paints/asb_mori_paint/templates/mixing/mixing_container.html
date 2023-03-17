@@ -1,0 +1,41 @@
+{% include 'base.html' %}
+
+{% block linkcss %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mix_process/list_container_style.css') }}">
+{% endblock linkcss %}
+
+{% block content %}
+    <div class="action">
+        <button class="btn" id="back" onclick="backPage()"> <i class="fa-solid fa-arrow-left"></i> </button>
+    </div>
+
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <div id="title-div">
+                    <h3 id="list_container">Lista de Contenedores</h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-sm-4">
+                    <div class="input-group mb-3">
+                        <div id="content">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-primary" id="end-process" onclick="sendData()">Finalizar Proceso</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button class="btn btn-success" id="zpl" onclick="pruebaError()">Prueba</button> -->
+
+    {% block script %}
+        <script src="{{ url_for('static', filename='js/api_connection/apis.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/mix_javascript/mix_container.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/language/mixing/list_containers_language.js') }}"></script>
+    {% endblock script %}
+
+{% endblock content %}

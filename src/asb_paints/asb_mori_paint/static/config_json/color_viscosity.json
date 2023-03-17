@@ -1,0 +1,44 @@
+{
+    "list":[
+        {
+            "id_color": 0,
+            "min_viscosity_seg": 5,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 1,
+            "min_viscosity_seg": 6,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 2,
+            "min_viscosity_seg": 6,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 3,
+            "min_viscosity_seg": 6,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 4,
+            "min_viscosity_seg": 6,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 5,
+            "min_viscosity_seg": 6,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 6,
+            "min_viscosity_seg": 6,
+            "max_viscosity_seg": 8
+        },
+        {
+            "id_color": 7,
+            "min_viscosity_seg": 5,
+            "max_viscosity_seg": 10
+        }
+    ]
+}

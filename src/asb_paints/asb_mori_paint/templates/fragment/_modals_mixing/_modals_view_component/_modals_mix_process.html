@@ -1,0 +1,189 @@
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="workerValidationModal" tabindex="-1" aria-labelledby="workerValidationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="workerValidationModalLabel"> Escaneo Trabajodor Team Leader </h5>
+            </div>
+            <div class="modal-body-process">
+                <h3 id="workerValidation-body">Favor de escanear el código de barras del Team Leader en turno</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="authDepartModal" tabindex="-1" aria-labelledby="authDepartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authDepartModalLabel">Permiso Liberación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <select class="form-select" onchange="departamentSelect(this)" for="InputGroupSelect01" id="select-form-departament">
+                        {% for i in departaments %}
+                            <option value="{{loop.index}}"> {{i['departament']}} </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mt-2">
+                    <input class="form-control" type="password" placeholder="contraseña" id="pass">
+                </div>
+                <br>
+                {% include 'fragment/_keyboards/_keyboard_alpha.html' %}
+            </div>            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="workerValidationTLModal"  tabindex="-1" aria-labelledby="workerValidationTLModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="workerValidationTLModalLabel"> Escaneo Trabajodor Team Leader </h5>
+            </div>
+            <div class="modal-body-process">
+                <h3 id="workerValidationTL-body">Favor de escanear el código de barras del Team Leader en turno.</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modales acerca del llenado de las jarras -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="componentCheckModal" tabindex="-1" aria-labelledby="componentCheckModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="componentCheckModalLabel"> Escaneo Componente </h5>
+            </div>
+            <div class="modal-body-process">
+                <h3> 
+                    <b id="body_scan_01" style="font-weight: inherit;">Favor de escanear el QR del componente: </b> <b id="component"> </b> <b id="body_scan_02" style="font-weight: inherit;"> para continuar el proceso. </b> 
+                </h3>
+            </div>
+            <div style="background-color: rgb(201, 201, 201)">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" id="btn-close_1">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="containerModal" tabindex="-1" aria-labelledby="containerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="containerModalLabel"> Inicio de Llenado </h5>
+            </div>
+            <div class="modal-body-process">
+                <h3 style="font-size: 65px; margin: 12px;">
+                    <b id="body_container" style="font-size: 65px;"> Favor de colocar el contenedor en la báscula. </b>
+                </h3>
+                <button class="btn btn-primary" id="ready" type="submit" style="width: 97%; font-size: 50px; margin: 15px;" onclick="readyBtn()">Listo</button>
+            </div>
+            <div style="background-color: rgb(201, 201, 201)">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" id="btn-close_1">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="calibrationModal" tabindex="-1" aria-labelledby="calibrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="calibrationModalLabel"> Calibración de Báscula </h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body-process">
+                <h3  style="font-size: 65px;">
+                    La báscula se esta calibrando. Favor de no retirar el contenedor.
+                </h3>                
+            </div>            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="sustModal" tabindex="-1" aria-labelledby="sustModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" style="height:750px !important;">
+        <div class="modal-content" style="height: 945px;">
+            <div class="modal-header-process">
+                <h5 class="modal-title-process" id="sustModalLabel"> Vertir Sustancia: <b id="substance-tare"> </b> </h5>
+            </div>
+            <div class="modal-body-process" id="graph-div">
+                <div>
+                    <h4 style=" font-size: 40px; font-weight: bolder;">Peso Esperado: <b id="expected-weight"></b></h4>
+                </div>
+                <div style="height: 725px">                    
+                    <canvas id="fillLeves-tare"></canvas>
+                </div>
+                <script>
+                    function init_values_jug(max_weight_mix_, weight_container_, tolerance){
+                        console.log(max_weight_mix_ + " " +tolerance )
+                        opcion = 1;
+                        port_ = 'COM4';
+                        loop_w = false;
+                        time_interval_ms = 1000; // este tiempo puede dar problemas, camabiar a 1000 si es así ... y en el servidor comentar la línea ser.tiemput = None 
+                        /// ....
+                        max_weight_mix = max_weight_mix_;
+                        percentage_interval_accept = tolerance; // 10 % 
+                        weight_container = weight_container_;
+                        max_weight_container = weight_container * 1.2;
+                        max_weight_mix_accept = max_weight_mix * 1.2
+                        gr_min_accept = max_weight_mix * (1.0-percentage_interval_accept)
+                        gr_max_accept = max_weight_mix * (1.0+percentage_interval_accept)
+                        // weights in grams ... 
+                        gr_level = 0;
+                        gr_level_low = gr_level;
+                        gr_level_in_interval = 0;
+                        gr_level_outside_interval = 0;
+                        // percentages ... 
+                        level = 100*gr_level/weight_container;
+                        console.log(level)
+                        level_low = level;
+                        level_in_interval = 0;
+                        level_outside_interval = 0;
+                        // console.log('Variables listas!!');
+                        document.getElementById('expected-weight').innerText = `${max_weight_mix} g`
+                    }
+                    
+                    function update_levels_loop_tare(){
+                        var ele = document.getElementById('fillLeves-tare')
+                        get_weight(port_loop);
+                        draw_fill_levels_stacked_bar(ele.id);
+                    }
+
+                    document.querySelectorAll('.btn-primary').forEach(item => {                        
+                        item.addEventListener('click', async function() {
+                        /// Inicializar Tara ....
+                        /* var elem_w = document.getElementById('Mixture_Weight');
+                        weight_ = parseFloat(elem_w.value); */
+                        //init_values(1600, 12000, .01);
+                        // .... 
+                        await init_tare(port_);
+                        var response = response_tare
+                        console.log("Estado falso del tare",response)
+                        /// Inicializar actualización de peso
+                        if (response == true){
+                            if(loop_w == false){
+                              port_loop = port_;
+                              loop_w = true;
+                              console.log('Port loop: '+port_loop);
+                              console.log("Ciclo inicado!!!");
+                              refreshIntervalId_update_weight = setInterval(update_levels_loop_tare, time_interval_ms);
+                              $('#errorTareModal').modal('hide')
+                            }
+                        } else {
+                            $('#errorTareModal').modal('show')
+                        }
+                      })
+                    });
+                    
+                </script>
+                <div class="row-2">
+                    <button class="btn btn-primary" type="submit" id="readyGraphBtn" onclick="checkMix()">Listo</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
